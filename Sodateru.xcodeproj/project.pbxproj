@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A9FA7AE9D9E53AA54AFA14B /* Pods_Sodateru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54B008B847375A7A760CDF7 /* Pods_Sodateru.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B060B4D91BF6E038006707C9 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = B060B4D81BF6E038006707C9 /* Word.swift */; };
+		B060B4DB1BF6E9E7006707C9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B060B4DA1BF6E9E7006707C9 /* SecondViewController.swift */; };
 		B0B8B6381BF5B9B30029799C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B8B6371BF5B9B30029799C /* AppDelegate.swift */; };
 		B0B8B63A1BF5B9B30029799C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B8B6391BF5B9B30029799C /* ViewController.swift */; };
 		B0B8B63D1BF5B9B30029799C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B8B63B1BF5B9B30029799C /* Main.storyboard */; };
 		B0B8B63F1BF5B9B30029799C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B8B63E1BF5B9B30029799C /* Assets.xcassets */; };
 		B0B8B6421BF5B9B30029799C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B8B6401BF5B9B30029799C /* LaunchScreen.storyboard */; };
 		B0B8B64D1BF5B9B30029799C /* SodateruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B8B64C1BF5B9B30029799C /* SodateruTests.swift */; };
+		B0B8B6581BF5BD080029799C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B8B6571BF5BD080029799C /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B4174AEFB008EA22A28FDE1 /* Pods-Sodateru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sodateru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sodateru/Pods-Sodateru.debug.xcconfig"; sourceTree = "<group>"; };
+		74EB7B43F0C0FC0F95C4F12E /* Pods-Sodateru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sodateru.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sodateru/Pods-Sodateru.release.xcconfig"; sourceTree = "<group>"; };
+		B060B4D81BF6E038006707C9 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		B060B4DA1BF6E9E7006707C9 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B0B8B6341BF5B9B30029799C /* Sodateru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sodateru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B8B6371BF5B9B30029799C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B8B6391BF5B9B30029799C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +44,8 @@
 		B0B8B6481BF5B9B30029799C /* SodateruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SodateruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B8B64C1BF5B9B30029799C /* SodateruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SodateruTests.swift; sourceTree = "<group>"; };
 		B0B8B64E1BF5B9B30029799C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0B8B6571BF5BD080029799C /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		F54B008B847375A7A760CDF7 /* Pods_Sodateru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sodateru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A9FA7AE9D9E53AA54AFA14B /* Pods_Sodateru.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +67,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E28AABAAA157EF8808EEB1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F54B008B847375A7A760CDF7 /* Pods_Sodateru.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6ACF5038E04C8B00BE26EB48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B4174AEFB008EA22A28FDE1 /* Pods-Sodateru.debug.xcconfig */,
+				74EB7B43F0C0FC0F95C4F12E /* Pods-Sodateru.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B0B8B62B1BF5B9B30029799C = {
 			isa = PBXGroup;
 			children = (
 				B0B8B6361BF5B9B30029799C /* Sodateru */,
 				B0B8B64B1BF5B9B30029799C /* SodateruTests */,
 				B0B8B6351BF5B9B30029799C /* Products */,
+				6ACF5038E04C8B00BE26EB48 /* Pods */,
+				0E28AABAAA157EF8808EEB1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +113,9 @@
 				B0B8B63E1BF5B9B30029799C /* Assets.xcassets */,
 				B0B8B6401BF5B9B30029799C /* LaunchScreen.storyboard */,
 				B0B8B6431BF5B9B30029799C /* Info.plist */,
+				B0B8B6571BF5BD080029799C /* GameScene.swift */,
+				B060B4D81BF6E038006707C9 /* Word.swift */,
+				B060B4DA1BF6E9E7006707C9 /* SecondViewController.swift */,
 			);
 			path = Sodateru;
 			sourceTree = "<group>";
@@ -103,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0B8B6511BF5B9B30029799C /* Build configuration list for PBXNativeTarget "Sodateru" */;
 			buildPhases = (
+				962A27447000BC2FA6CD74C8 /* Check Pods Manifest.lock */,
 				B0B8B6301BF5B9B30029799C /* Sources */,
 				B0B8B6311BF5B9B30029799C /* Frameworks */,
 				B0B8B6321BF5B9B30029799C /* Resources */,
+				9A182C411359F94F6953F0BF /* Embed Pods Frameworks */,
+				A7613EA65200F95F5C55C75B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,11 +228,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		962A27447000BC2FA6CD74C8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9A182C411359F94F6953F0BF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sodateru/Pods-Sodateru-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7613EA65200F95F5C55C75B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sodateru/Pods-Sodateru-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B0B8B6301BF5B9B30029799C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B060B4DB1BF6E9E7006707C9 /* SecondViewController.swift in Sources */,
+				B0B8B6581BF5BD080029799C /* GameScene.swift in Sources */,
+				B060B4D91BF6E038006707C9 /* Word.swift in Sources */,
 				B0B8B63A1BF5B9B30029799C /* ViewController.swift in Sources */,
 				B0B8B6381BF5B9B30029799C /* AppDelegate.swift in Sources */,
 			);
@@ -325,17 +412,20 @@
 		};
 		B0B8B6521BF5B9B30029799C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B4174AEFB008EA22A28FDE1 /* Pods-Sodateru.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sodateru/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.Sodateru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		B0B8B6531BF5B9B30029799C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74EB7B43F0C0FC0F95C4F12E /* Pods-Sodateru.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sodateru/Info.plist;
@@ -388,6 +478,7 @@
 				B0B8B6531BF5B9B30029799C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0B8B6541BF5B9B30029799C /* Build configuration list for PBXNativeTarget "SodateruTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +487,7 @@
 				B0B8B6561BF5B9B30029799C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
