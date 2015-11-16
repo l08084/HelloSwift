@@ -34,8 +34,8 @@
                                     <action selector="teachWord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jJB-Ej-nQC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="英単語" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIO-Jc-C2o">
-                                <rect key="frame" x="28" y="20" width="51" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIO-Jc-C2o">
+                                <rect key="frame" x="79" y="20" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -53,17 +53,27 @@
                                     <action selector="checkMemory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9LI-Up-k5Y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccA-tG-XOT">
+                                <rect key="frame" x="43" y="81" width="30" height="30"/>
+                                <state key="normal" title="動詞"/>
+                                <connections>
+                                    <action selector="verbClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iuL-kZ-hb5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8T-kS-JV8">
+                                <rect key="frame" x="148" y="81" width="30" height="30"/>
+                                <state key="normal" title="名詞"/>
+                                <connections>
+                                    <action selector="nounClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kqf-8X-P1e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="enField" destination="xAd-Pb-OYg" id="5MG-fe-TbP"/>
-                        <outlet property="jaField" destination="jjd-Oc-TEt" id="cI5-3l-XtV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="235" y="359"/>
+            <point key="canvasLocation" x="390" y="311"/>
         </scene>
     </scenes>
 </document>

@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         // シーンの作成
         let scene = GameScene()
         
+        //self.view = SKView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
+        
         // View ControllerのViewをSKView型として取り出す
         let view = self.view as! SKView
         
@@ -63,6 +65,10 @@ class ViewController: UIViewController {
 
     }
  
+    @IBAction func verbClicked(sender: AnyObject) {
+    }
+    @IBAction func nounClicked(sender: AnyObject) {
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

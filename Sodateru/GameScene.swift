@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class GameScene : SKScene {
+class GameScene : SKScene,SKPhysicsContactDelegate {
     
     var baseNode: SKNode!
     var player: SKSpriteNode!
@@ -32,6 +32,24 @@ class GameScene : SKScene {
         
         // プレイキャラを構築
         self.setupPlayer()
+        
+        // 重力設定
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -4.0)
+        // 物体の衝突した情報を受け取れるようにする
+        self.physicsWorld.contactDelegate = self
+        
+        //GameSceneの大きさでphysicsBodyを設定
+        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+        
+        let label = SKLabelNode()
+        label.text = "eat"
+        label.position = CGPoint(x: 80, y: 30)
+        
+        label.physicsBody = SKPhysicsBody(circleOfRadius: 50)
+        
+        self.addChild(label)
+        
+        
     }
     
     func setupBackgroundSea() {
@@ -79,6 +97,7 @@ class GameScene : SKScene {
         player = SKSpriteNode(texture: playerTexture[0])
         player.position = CGPoint(x: self.frame.size.width * 0.35, y: self.frame.size.height * 0.6)
         player.runAction(loopAnimation)
+        //player.physicsBody = SKPhysicsBody(circleOfRadius: 40)
         
         self.addChild(player)
     }
