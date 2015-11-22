@@ -13,6 +13,9 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
     
     var baseNode: SKNode!
     var player: SKSpriteNode!
+    var myLabel: SKLabelNode!
+    
+    var deltaPoint = CGPointZero
     
     struct Constants {
         
@@ -34,7 +37,7 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
         self.setupPlayer()
         
         // 重力設定
-        self.physicsWorld.gravity = CGVector(dx: 0, dy: -4.0)
+        //self.physicsWorld.gravity = CGVector(dx: 0, dy: -4.0)
         // 物体の衝突した情報を受け取れるようにする
         self.physicsWorld.contactDelegate = self
         
@@ -45,9 +48,37 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
         label.text = "eat"
         label.position = CGPoint(x: 80, y: 30)
         
-        label.physicsBody = SKPhysicsBody(circleOfRadius: 50)
+        label.physicsBody = SKPhysicsBody(circleOfRadius: 20)
+
+        let label2 = SKLabelNode()
+        label2.text = "play"
+        label2.position = CGPoint(x: 80, y: 20)
+        
+        label2.physicsBody = SKPhysicsBody(circleOfRadius: 20)
+        
+        let label3 = SKLabelNode()
+        label3.text = "swim"
+        label3.position = CGPoint(x: 110, y: 30)
+        
+        label3.physicsBody = SKPhysicsBody(circleOfRadius: 20)
+        
+        let label4 = SKLabelNode()
+        label4.text = "run"
+        label4.position = CGPoint(x: 60, y: 20)
+        
+        label4.physicsBody = SKPhysicsBody(circleOfRadius: 20)
+        
+       
+        myLabel = SKLabelNode()
+        myLabel.text = "Drag!!"
+        myLabel.position = CGPoint(x: 60, y: 20)
+        myLabel.physicsBody = SKPhysicsBody(circleOfRadius: 20)
         
         self.addChild(label)
+        self.addChild(label2)
+        self.addChild(label3)
+        self.addChild(label4)
+        self.addChild(myLabel)
         
         
     }
@@ -100,6 +131,63 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
         //player.physicsBody = SKPhysicsBody(circleOfRadius: 40)
         
         self.addChild(player)
+    }
+    /*
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        //Labelアニメーション
+        UIView.animateWithDuration(0.06, animations: { () -> Void in
+            // 縮小用アフィン行列を作成する.
+            self.myLabel.transform = CGAffineTransformMakeScale(0.9, 0.9)
+            
+        })
+            { (Bool) -> Void in
+        }
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        // タッチイベントを取得.
+        let aTouch = touches.first
+        
+        // 移動した先の座標を取得.
+        let location = aTouch!.locationInView(self.view)
+        
+        // 移動する前の座標を取得.
+        let prevLocation = aTouch!.previousLocationInView(self.view)
+        
+        // CGRect生成.
+        var myFrame: CGRect = self.view!.frame
+        
+        // ドラッグで移動したx, y距離をとる.
+        let deltaX: CGFloat = location.x - prevLocation.x
+        let deltaY: CGFloat = location.y - prevLocation.y
+        
+        // 移動した分の距離をmyFrameの座標にプラスする.
+        myFrame.origin.x += deltaX
+        myFrame.origin.y += deltaY
+        
+        // frameにmyFrameを追加.
+        self.view!.frame = myFrame
+    }
+    */
+   
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        var currentPoint:CGPoint! = touches.first!.locationInNode(self)
+        var previousPoint:CGPoint! = touches.first!.previousLocationInNode(self)
+        deltaPoint = CGPointMake(currentPoint.x - previousPoint.x, currentPoint.y - previousPoint.y)
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        deltaPoint = CGPointZero
+    }
+    
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        deltaPoint = CGPointZero
+    }
+    
+    override func update(currentTime: NSTimeInterval) {
+        var newPoint = CGPointMake(self.myLabel.position.x + self.deltaPoint.x, self.myLabel.position.y + self.deltaPoint.y)
+        myLabel.position = newPoint
+        deltaPoint = CGPointZero
     }
 
 }

@@ -18,19 +18,12 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let realm = try! Realm()
-        let myItems2 = realm.objects(Word).filter("english = 'Hello'")
-        print(myItems2)
-        
-        // Status Barの高さを取得する.
         let barHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
         
-        // Viewの高さと幅を取得する.
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height
         
-        // TableViewの生成する(status barの高さ分ずらして表示).
-        myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
+         myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
         
         // Cell名の登録をおこなう.
         myTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
@@ -43,47 +36,22 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Viewに追加する.
         self.view.addSubview(myTableView)
-        
-        // 背景色を設定
-        //self.view.backgroundColor = UIColor.blueColor()
-        
-        // ボタンを作成
-       /* let backButton: UIButton = UIButton(frame: CGRectMake(0, 0, 120, 50))
-        backButton.backgroundColor = UIColor.redColor()
-        backButton.layer.masksToBounds = true
-        backButton.setTitle("Back", forState: .Normal)
-        backButton.layer.cornerRadius = 20.0
-        backButton.layer.position = CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height - 50)
-        backButton.addTarget(self, action: "onClickMyButton:", forControlEvents: .TouchUpInside)
-        self.view.addSubview(backButton) */
+
     }
     
-    internal func onClickMyButton(sender: UIButton) {
-        
-        // 遷移するViewを定義
-        let myViewController: UIViewController = ViewController()
-        
-        // アニメーションを設定
-        myViewController.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
-        
-        // Viewの移動
-        self.presentViewController(myViewController, animated: false, completion: nil)
-    }
     
     /*
     Cellが選択された際に呼び出されるデリゲートメソッド.
     */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("Num: \(indexPath.row)")
-        print("Value: \(myItems[indexPath.row])")
-    }
+      
+        // グローバル変数に選択値を保持
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.params = myItems[indexPath.row] as! String
+        
+        // 元の画面に戻す
+        self.navigationController?.popViewControllerAnimated(true)
     
-    /*
-    Cellの総数を返すデータソースメソッド.
-    (実装必須)
-    */
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myItems.count
     }
     
     /*
@@ -100,4 +68,16 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
+    /*
+    Cellの総数を返すデータソースメソッド.
+    (実装必須)
+    */
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myItems.count
+    }
+
+    
+
+   
+
 }

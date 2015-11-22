@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var enField: UITextField!
     @IBOutlet weak var jaField: UITextField!
     
+    var selected = "選択してください"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +38,33 @@ class ViewController: UIViewController {
         
         // ビュー上にシーンを表示
         view.presentScene(scene)
+        
+        self.setView()
+    }
+    
+    func setView() {
+        
+        // プルダウンをボタンで実装
+        var buttonSelect: UIButton = UIButton()
+        buttonSelect.frame = CGRectMake(0, 0, 100, 100)
+        buttonSelect.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        buttonSelect.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+        buttonSelect.addTarget(self, action: "clickButtonSelect:", forControlEvents: .TouchUpInside)
+        buttonSelect.setTitle(selected, forState: UIControlState.Normal)
+        self.view.addSubview(buttonSelect)
+    }
+    
+    // プルダウン（ボタン）がタップされたらプルダウン用の別画面を開く
+    func clickButtonSelect(sender: UIButton) {
+        var viewController: SecondViewController = SecondViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    // プルダウン選択後に戻ってきたら、選択値を取得してviewを再描画します
+    override func viewWillAppear(animated: Bool) {
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.selected = appDelegate.params
+        self.setView()
     }
 
     @IBAction func teachWord(sender: UIButton) {
