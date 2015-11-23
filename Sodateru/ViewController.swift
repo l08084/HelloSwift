@@ -12,18 +12,25 @@ import RealmSwift
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var enField: UITextField!
-    @IBOutlet weak var jaField: UITextField!
+    @IBOutlet weak var selectBox: UIButton!
+    @IBOutlet weak var speakLabel: UILabel!
     
+    //選択値
     var selected = "選択してください"
     
+    @IBAction func talking(sender: UIButton) {
+        
+        let act = Action()
+        let speak = act.generateASentence("NV")
+        speakLabel.text = speak
+        print("talk:\(speak)")
+        //act.execTest()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // シーンの作成
         let scene = GameScene()
-        
-        //self.view = SKView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
         
         // View ControllerのViewをSKView型として取り出す
         let view = self.view as! SKView
@@ -45,58 +52,57 @@ class ViewController: UIViewController {
     func setView() {
         
         // プルダウンをボタンで実装
-        var buttonSelect: UIButton = UIButton()
-        buttonSelect.frame = CGRectMake(0, 0, 100, 100)
-        buttonSelect.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        buttonSelect.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
-        buttonSelect.addTarget(self, action: "clickButtonSelect:", forControlEvents: .TouchUpInside)
-        buttonSelect.setTitle(selected, forState: UIControlState.Normal)
-        self.view.addSubview(buttonSelect)
+        selectBox.frame = CGRectMake(0, 0, 100, 100)
+        
+        selectBox.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+        
     }
     
     // プルダウン（ボタン）がタップされたらプルダウン用の別画面を開く
-    func clickButtonSelect(sender: UIButton) {
-        var viewController: SecondViewController = SecondViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    // プルダウン選択後に戻ってきたら、選択値を取得してviewを再描画します
-    override func viewWillAppear(animated: Bool) {
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        self.selected = appDelegate.params
-        self.setView()
-    }
-
-    @IBAction func teachWord(sender: UIButton) {
+    @IBAction func clickButtonSelect(sender: UIButton) {
         
-        var myWord = Word()
-        
-        myWord.english = enField.text!
-        myWord.japanese = jaField.text!
-        
-        let realm = try! Realm()
-        
-        try! realm.write {
-            realm.add(myWord)
-        }
-    }
-    
-    @IBAction func checkMemory(sender: AnyObject) {
-        
-        //　遷移するViewを定義する
+        // 遷移するViewを定義する.
         let mySecondViewController: UIViewController = SecondViewController()
         
-        // アニメーションを設定する
+        // アニメーションを設定する.
         mySecondViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
         
-        // Viewを移動
+        // Viewの移動する.
         self.presentViewController(mySecondViewController, animated: false, completion: nil)
+    }
+    
+    @IBAction func nounClickButton(sender: UIButton) {
+        
+        // 遷移するViewを定義する.
+        let nounViewController: UIViewController = NounViewController()
+        
+        // アニメーションを設定する.
+        nounViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+        
+        // Viewの移動する.
+        self.presentViewController(nounViewController, animated: false, completion: nil)
+        
+    }
+    @IBAction func adjectiveClickButton(sender: UIButton) {
+        
+        // 遷移するViewを定義する.
+        let adjectiveViewController: UIViewController = AdjectiveViewController()
+        
+        // アニメーションを設定する.
+        adjectiveViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+        
+        // Viewの移動する.
+        self.presentViewController(adjectiveViewController, animated: false, completion: nil)
 
     }
- 
-    @IBAction func verbClicked(sender: AnyObject) {
-    }
-    @IBAction func nounClicked(sender: AnyObject) {
+    
+    
+    // プルダウン選択後に戻ってきたら、選択値を取得してviewを再描画します
+   override func viewWillAppear(animated: Bool) {
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.selected = appDelegate.params
+        print("params: \(appDelegate.params)")
+        self.setView()
     }
     
     override func didReceiveMemoryWarning() {

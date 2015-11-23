@@ -11,7 +11,7 @@ import Foundation
 public class Utility {
     
     //TODO: パスを動的に取得する
-    var filePath = "/Users/snufkin/Desktop/FirstSwift/FirstSwift/"
+    var filePath = "/Users/takuya/Practice/Sodateru/Sodateru/"
     
     let SEPARATOR:String = ","
     
@@ -44,7 +44,12 @@ public class Utility {
     }
     
     //ファイルへの書き込み（as new）
-    func writeAStringToFile)(str: String, fileName:String) {
+    func writeAStringToFile(contents: String, fileName:String) {
+        
+        
+        // 書き込み先ファイルのフルパス
+        let fFullName = "\(filePath)\(fileName)"
+        
         /*** いざ、書き込む ***/
         do {
         try contents.writeToFile(fFullName, atomically: true, encoding: NSUTF8StringEncoding)

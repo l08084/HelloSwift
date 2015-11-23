@@ -18,8 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYh-I5-vSV">
-                                <rect key="frame" x="233" y="42" width="90" height="30"/>
-                                <state key="normal" title="言葉を教える"/>
+                                <rect key="frame" x="305" y="42" width="30" height="30"/>
+                                <state key="normal" title="話す"/>
+                                <connections>
+                                    <action selector="talking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0dA-NY-Ggo"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIO-Jc-C2o">
                                 <rect key="frame" x="79" y="20" width="0.0" height="0.0"/>
@@ -27,17 +30,48 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKN-2H-PFR">
-                                <rect key="frame" x="196" y="536" width="120" height="30"/>
-                                <state key="normal" title="覚えた単語を確認"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5q-sN-wvh">
+                                <rect key="frame" x="34" y="42" width="30" height="30"/>
+                                <state key="normal" title="動詞"/>
+                                <connections>
+                                    <action selector="clickButtonSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C2X-bu-KZi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajm-FN-Tp2">
+                                <rect key="frame" x="106" y="42" width="30" height="30"/>
+                                <state key="normal" title="名詞"/>
+                                <connections>
+                                    <action selector="nounClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C8J-h4-YAe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEc-J7-fzd">
+                                <rect key="frame" x="178" y="42" width="45" height="30"/>
+                                <state key="normal" title="形容詞"/>
+                                <connections>
+                                    <action selector="adjectiveClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fuA-Wh-Idy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="こんにちは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osp-Uf-doX">
+                                <rect key="frame" x="204" y="280" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zP8-Dv-gXg">
+                                <rect key="frame" x="251" y="42" width="30" height="30"/>
+                                <state key="normal" title="登録"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="selectBox" destination="r5q-sN-wvh" id="rwJ-9M-oxH"/>
+                        <outlet property="speakLabel" destination="osp-Uf-doX" id="e6X-UP-Djx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="-4"/>
+            <point key="canvasLocation" x="-943" y="-401"/>
         </scene>
     </scenes>
 </document>

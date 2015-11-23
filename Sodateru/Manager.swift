@@ -63,10 +63,11 @@ public class Manager {
         
         for sntncData in sntncDataList {
             if (sntncData[1] == flg) {
-                resultList.append(sntncData[0])
+                resultList.append(sntncData[0])
             }
         }
         
+        return resultList
     }
     
     

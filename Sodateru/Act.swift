@@ -12,9 +12,9 @@ public class Action {
     
     let wordFName: String = "words.txt"
     let sntncFName: String = "sentences.txt"
-    let strNoun: String = "N"
-    let strVerb: String = "V"
-    let strPronoun: String = "P"
+    let strNoun: String = "noun"
+    let strVerb: String = "verb"
+    let strPronoun: String = "pronoun"
     let formSV: String = "NV"
     let formSP: String = "NP"
     let util = Utility()
@@ -100,14 +100,15 @@ public class Action {
     }
 
     /**
-     * 文章学習
+     * 文章学習
      **/
-    func learnASentence(sntnc: String, tORf: Bool) {
+    func learnASentence(sntnc:String, tORf:Bool) {
+    
         
-        // 文章データリスト
-        let sntncDataList = util.readFileAsArray(sntncFName)
-        var contents:String = ""
-        var memoFlag:String  = "-"
+        // 文章データリスト
+        var sntncDataList = util.readFileAsArray(sntncFName)
+        var contents:String = ""
+        var memoFlag:String = "-"
         
         //1:正しい文章なので覚える, 2:正しくない文章なので覚えない
         if (tORf) {
@@ -116,16 +117,15 @@ public class Action {
             memoFlag = "2"
         }
         
-        for sntcnData in sntncDataList {
-            if (sntncData[0] == sntcnc) {
-                sntncData[1] = memoFlag;
+        for var sntncData in sntncDataList {
+            if (sntncData[0] == sntnc) {
+                sntncData[1] = memoFlag
             }
             contents = sntncData[0] + sntncData[1] + "\n"
         }
-        
-        util.writeAStringToFile(contents, sntncFName)
+        util.writeAStringToFile(contents, fileName: sntncFName)
     }
-    
+    
     /**
      * テスト用関数
      **/

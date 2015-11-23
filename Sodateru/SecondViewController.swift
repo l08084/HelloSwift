@@ -12,7 +12,7 @@ import RealmSwift
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Tableで使用する配列を設定する
-    private let myItems: NSArray = ["TEST1", "TEST2", "TEST3"]
+    private var myItems: [String] = ["りんご", "空", "世間話", "映画", "カフェ", "コーヒー"]
     private var myTableView: UITableView!
     
     override func viewDidLoad() {
@@ -34,24 +34,20 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Delegateを設定する.
         myTableView.delegate = self
         
+        let act = Action()
+        myItems = act.refWordList("verb")
+        print("myItems:\(myItems)")
+        
+        
         // Viewに追加する.
         self.view.addSubview(myTableView)
 
     }
     
     
-    /*
-    Cellが選択された際に呼び出されるデリゲートメソッド.
-    */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-      
-        // グローバル変数に選択値を保持
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.params = myItems[indexPath.row] as! String
-        
-        // 元の画面に戻す
-        self.navigationController?.popViewControllerAnimated(true)
-    
+        let text: String = myItems[indexPath.row] as! String
+        print("text:\(text)")
     }
     
     /*
@@ -65,7 +61,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Cellに値を設定する.
         cell.textLabel!.text = "\(myItems[indexPath.row])"
-        
+        print("return,var")
         return cell
     }
     /*
@@ -73,11 +69,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     (実装必須)
     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("count:\(myItems.count)")
         return myItems.count
     }
-
-    
-
-   
 
 }
