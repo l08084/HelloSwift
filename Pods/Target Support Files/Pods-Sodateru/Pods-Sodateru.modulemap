@@ -1,0 +1,6 @@
+framework module Pods_Sodateru {
+  umbrella header "Pods-Sodateru-umbrella.h"
+
+  export *
+  module * { export * }
+}
