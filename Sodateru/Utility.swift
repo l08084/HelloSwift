@@ -11,7 +11,8 @@ import Foundation
 public class Utility {
     
     //TODO: パスを動的に取得する
-    var filePath = "/Users/takuya/Practice/Sodateru/Sodateru/"
+    var filePath = "/Users/snufkin/Desktop/HelloSwift/Sodateru/"
+    //var filePath = "/Users/takuya/Practice/Sodateru/Sodateru/"
     
     let SEPARATOR:String = ","
     
