@@ -75,7 +75,7 @@ public class Action {
         
         //間違い文章データリスト
         let falseSntncList:[String] = mgr.getSentenceListByFlag("2")
-        var judge = false
+        let judge = false
         for falseSntnc in falseSntncList {
             if (sentence == falseSntnc) {
                 judge == true
@@ -106,7 +106,7 @@ public class Action {
     
         
         // 文章データリスト
-        var sntncDataList = util.readFileAsArray(sntncFName)
+        let sntncDataList = util.readFileAsArray(sntncFName)
         var contents:String = ""
         var memoFlag:String = "-"
         

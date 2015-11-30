@@ -36,18 +36,19 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let act = Action()
         myItems = act.refWordList("verb")
-        print("myItems:\(myItems)")
-        
         
         // Viewに追加する.
         self.view.addSubview(myTableView)
-
+        
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let text: String = myItems[indexPath.row] as! String
+        let text: String = myItems[indexPath.row] 
         print("text:\(text)")
+        let appDelegate :AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.verb = text
+        performSegueWithIdentifier("toViewController", sender: nil)
     }
     
     /*
@@ -61,7 +62,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Cellに値を設定する.
         cell.textLabel!.text = "\(myItems[indexPath.row])"
-        print("return,var")
         return cell
     }
     /*
@@ -69,8 +69,23 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     (実装必須)
     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count:\(myItems.count)")
         return myItems.count
     }
+    
+    /*
+    ボタンイベント.
+    */
+    internal func onClickMyButton(sender: UIButton){
+        
+        // 遷移するViewを定義.
+        let myViewController: UIViewController = ViewController()
+        
+        // アニメーションを設定.
+        myViewController.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        
+        // Viewの移動.
+        self.presentViewController(myViewController, animated: true, completion: nil)
+    }
+    
 
 }

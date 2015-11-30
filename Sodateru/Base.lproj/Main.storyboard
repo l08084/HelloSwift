@@ -31,47 +31,136 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5q-sN-wvh">
-                                <rect key="frame" x="34" y="42" width="30" height="30"/>
+                                <rect key="frame" x="20" y="42" width="59" height="30"/>
                                 <state key="normal" title="動詞"/>
                                 <connections>
                                     <action selector="clickButtonSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C2X-bu-KZi"/>
+                                    <segue destination="DiS-Dn-DLj" kind="modal" id="Vmu-69-8FK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajm-FN-Tp2">
-                                <rect key="frame" x="106" y="42" width="30" height="30"/>
+                                <rect key="frame" x="87" y="42" width="62" height="30"/>
                                 <state key="normal" title="名詞"/>
                                 <connections>
                                     <action selector="nounClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C8J-h4-YAe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEc-J7-fzd">
-                                <rect key="frame" x="178" y="42" width="45" height="30"/>
-                                <state key="normal" title="形容詞"/>
-                                <connections>
-                                    <action selector="adjectiveClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fuA-Wh-Idy"/>
+                                    <segue destination="JZI-Ey-Zzx" kind="modal" identifier="" id="wAW-Tx-F6d"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="こんにちは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osp-Uf-doX">
                                 <rect key="frame" x="204" y="280" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zP8-Dv-gXg">
                                 <rect key="frame" x="251" y="42" width="30" height="30"/>
                                 <state key="normal" title="登録"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEc-J7-fzd">
+                                <rect key="frame" x="168" y="42" width="67" height="30"/>
+                                <state key="normal" title="形容詞"/>
+                                <connections>
+                                    <action selector="adjectiveClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fuA-Wh-Idy"/>
+                                    <segue destination="DMd-lZ-ROw" kind="modal" id="7r5-GU-ckx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="selectBox" destination="r5q-sN-wvh" id="rwJ-9M-oxH"/>
+                        <outlet property="selectNounBox" destination="ajm-FN-Tp2" id="2eC-ad-Wfi"/>
+                        <outlet property="selectPronounBox" destination="hEc-J7-fzd" id="xGx-qR-RQA"/>
                         <outlet property="speakLabel" destination="osp-Uf-doX" id="e6X-UP-Djx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-943" y="-401"/>
+            <point key="canvasLocation" x="-1772" y="-855"/>
+        </scene>
+        <!--Adjective View Controller-->
+        <scene sceneID="n8I-C6-LZk">
+            <objects>
+                <viewController id="DMd-lZ-ROw" customClass="AdjectiveViewController" customModule="Sodateru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SAO-iX-fLl"/>
+                        <viewControllerLayoutGuide type="bottom" id="XmP-Lw-PlN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o3F-ZS-G9y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDr-qQ-MlV">
+                                <rect key="frame" x="26" y="50" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="toAdjectiveViewController" id="A8B-av-cHI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EPm-bz-Cvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420" y="-760"/>
+        </scene>
+        <!--Noun View Controller-->
+        <scene sceneID="LV3-ns-ibl">
+            <objects>
+                <viewController id="JZI-Ey-Zzx" customClass="NounViewController" customModule="Sodateru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AVU-TX-ZJ7"/>
+                        <viewControllerLayoutGuide type="bottom" id="T9u-Jr-9Gg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HxA-PL-8gE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iQ-91-jND">
+                                <rect key="frame" x="52" y="48" width="34" height="30"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="nounToViewController" id="FvG-99-M77"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bgj-HW-T6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1251" y="76"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="L9K-tk-bAP">
+            <objects>
+                <viewController id="DiS-Dn-DLj" customClass="SecondViewController" customModule="Sodateru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1cP-iI-tg8"/>
+                        <viewControllerLayoutGuide type="bottom" id="oug-fw-uzR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jfW-yy-Ab0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNB-jr-B1U">
+                                <rect key="frame" x="45" y="431" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="toViewController" id="OU0-Uc-wql"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASc-5J-GCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7147" y="-3182"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="A8B-av-cHI"/>
+    </inferredMetricsTieBreakers>
 </document>

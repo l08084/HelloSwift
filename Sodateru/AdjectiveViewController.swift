@@ -12,7 +12,7 @@ import SpriteKit
 class AdjectiveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Tableで使用する配列を設定する
-    private let myItems: NSArray = ["大きい", "おいしい", "美しい", "苦い", "にぎやかな", "しずかな"]
+    private var myItems: [String] = ["りんご", "空", "世間話", "映画", "カフェ", "コーヒー"]
     private var myTableView: UITableView!
     
     
@@ -35,30 +35,20 @@ class AdjectiveViewController: UIViewController, UITableViewDelegate, UITableVie
         // Delegateを設定する.
         myTableView.delegate = self
         
+        let act = Action()
+        myItems = act.refWordList("pronoun")
+        
         // Viewに追加する.
         self.view.addSubview(myTableView)
         
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let text: String = myItems[indexPath.row] as! String
+        let text: String = myItems[indexPath.row]
         print("text:\(text)")
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.params = text
-        //self.navigationController?.popViewControllerAnimated(true)
-        
-        // 遷移するViewを定義.
-        let myViewController: UIViewController = ViewController()
-        
-        // アニメーションを設定.
-        //myViewController.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
-        
-        // Viewの移動.
-        //self.presentViewController(myViewController, animated: false, completion: nil)
-        
-        let newScene = GameScene()
-        newScene.scaleMode = SKSceneScaleMode.AspectFill
-        //self.view.presentScene(newScene)
+        let appDelegate :AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.pronoun = text
+        performSegueWithIdentifier("toAdjectiveViewController", sender: nil)
     }
     
     /*

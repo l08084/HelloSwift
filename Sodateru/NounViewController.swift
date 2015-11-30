@@ -36,17 +36,20 @@ class NounViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let act = Action()
         myItems = act.refWordList("noun")
-        print("myItems:\(myItems)")
         
         // Viewに追加する.
         self.view.addSubview(myTableView)
+        
         
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let text: String = myItems[indexPath.row] as! String
+        let text: String = myItems[indexPath.row]
         print("text:\(text)")
+        let appDelegate :AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.noun = text
+        performSegueWithIdentifier("nounToViewController", sender: nil)
     }
     
     /*
@@ -60,7 +63,6 @@ class NounViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Cellに値を設定する.
         cell.textLabel!.text = "\(myItems[indexPath.row])"
-        print("return,var")
         return cell
     }
     /*
@@ -68,7 +70,6 @@ class NounViewController: UIViewController, UITableViewDelegate, UITableViewData
     (実装必須)
     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count:\(myItems.count)")
         return myItems.count
     }
 
