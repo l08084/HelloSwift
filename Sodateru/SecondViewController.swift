@@ -34,6 +34,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Delegateを設定する.
         myTableView.delegate = self
         
+        // リストから動詞の単語を取り出す
         let act = Action()
         myItems = act.refWordList("verb")
         
@@ -48,13 +49,12 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("text:\(text)")
         let appDelegate :AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.verb = text
+        
+        // 遷移元の画面に戻る
         performSegueWithIdentifier("toViewController", sender: nil)
     }
     
-    /*
-    Cellに値を設定するデータソースメソッド.
-    (実装必須)
-    */
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // 再利用するCellを取得する.
@@ -64,28 +64,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.textLabel!.text = "\(myItems[indexPath.row])"
         return cell
     }
-    /*
-    Cellの総数を返すデータソースメソッド.
-    (実装必須)
-    */
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myItems.count
     }
-    
-    /*
-    ボタンイベント.
-    */
-    internal func onClickMyButton(sender: UIButton){
-        
-        // 遷移するViewを定義.
-        let myViewController: UIViewController = ViewController()
-        
-        // アニメーションを設定.
-        myViewController.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
-        
-        // Viewの移動.
-        self.presentViewController(myViewController, animated: true, completion: nil)
-    }
-    
 
 }

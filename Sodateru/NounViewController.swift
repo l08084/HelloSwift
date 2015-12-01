@@ -52,10 +52,6 @@ class NounViewController: UIViewController, UITableViewDelegate, UITableViewData
         performSegueWithIdentifier("nounToViewController", sender: nil)
     }
     
-    /*
-    Cellに値を設定するデータソースメソッド.
-    (実装必須)
-    */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // 再利用するCellを取得する.
@@ -65,10 +61,7 @@ class NounViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.textLabel!.text = "\(myItems[indexPath.row])"
         return cell
     }
-    /*
-    Cellの総数を返すデータソースメソッド.
-    (実装必須)
-    */
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myItems.count
     }

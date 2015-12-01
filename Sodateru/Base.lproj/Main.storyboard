@@ -52,16 +52,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zP8-Dv-gXg">
-                                <rect key="frame" x="251" y="42" width="30" height="30"/>
-                                <state key="normal" title="登録"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEc-J7-fzd">
                                 <rect key="frame" x="168" y="42" width="67" height="30"/>
                                 <state key="normal" title="形容詞"/>
                                 <connections>
                                     <action selector="adjectiveClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fuA-Wh-Idy"/>
                                     <segue destination="DMd-lZ-ROw" kind="modal" id="7r5-GU-ckx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zP8-Dv-gXg">
+                                <rect key="frame" x="251" y="42" width="30" height="30"/>
+                                <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="wordRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6UA-Ev-MWB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1772" y="-855"/>
+            <point key="canvasLocation" x="-1895" y="-832"/>
         </scene>
         <!--Adjective View Controller-->
         <scene sceneID="n8I-C6-LZk">

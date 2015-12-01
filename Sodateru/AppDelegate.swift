@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    //画面遷移先で渡す値を入れる
+    // 画面遷移先で渡す値を入れる
     var verb: String = ""
     var noun: String = ""
     var pronoun: String = ""
