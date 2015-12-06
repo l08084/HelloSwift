@@ -52,6 +52,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zP8-Dv-gXg">
+                                <rect key="frame" x="251" y="42" width="30" height="30"/>
+                                <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="wordRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6UA-Ev-MWB"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEc-J7-fzd">
                                 <rect key="frame" x="168" y="42" width="67" height="30"/>
                                 <state key="normal" title="形容詞"/>
@@ -60,11 +67,18 @@
                                     <segue destination="DMd-lZ-ROw" kind="modal" id="7r5-GU-ckx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zP8-Dv-gXg">
-                                <rect key="frame" x="251" y="42" width="30" height="30"/>
-                                <state key="normal" title="登録"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fF4-Y7-7JN">
+                                <rect key="frame" x="71" y="506" width="94" height="40"/>
+                                <state key="normal" image="batu"/>
                                 <connections>
-                                    <action selector="wordRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6UA-Ev-MWB"/>
+                                    <action selector="sentenceNG:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vok-Eu-Mpi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0m-5C-fYr">
+                                <rect key="frame" x="196" y="506" width="94" height="40"/>
+                                <state key="normal" image="maru"/>
+                                <connections>
+                                    <action selector="sentenceOK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oM4-TT-d6R"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1895" y="-832"/>
+            <point key="canvasLocation" x="-1859" y="-917"/>
         </scene>
         <!--Adjective View Controller-->
         <scene sceneID="n8I-C6-LZk">
@@ -163,6 +177,10 @@
             <point key="canvasLocation" x="-7147" y="-3182"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="batu" width="40" height="40"/>
+        <image name="maru" width="40" height="40"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="A8B-av-cHI"/>
     </inferredMetricsTieBreakers>

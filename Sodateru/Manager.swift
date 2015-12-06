@@ -69,6 +69,4 @@ public class Manager {
         
         return resultList
     }
-    
-    
 }

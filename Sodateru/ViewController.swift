@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         let speak = act.generateASentence("NV")
         speakLabel.text = speak
         print("talk:\(speak)")
+        act.registerASentence(speak + ",-")
     }
     
     /**
@@ -127,6 +128,19 @@ class ViewController: UIViewController {
             selectPronounBox.setTitle(paramP, forState: .Normal)
         }
     }
+    
+    // ⚪︎ボタン押下
+    @IBAction func sentenceOK(sender: AnyObject) {
+        print("OK:\(speakLabel.text)")
+        act.learnASentence(speakLabel.text!, tORf: true)
+    }
+    
+    // ×ボタン押下
+    @IBAction func sentenceNG(sender: AnyObject) {
+        print("NG:\(speakLabel.text)")
+        act.learnASentence(speakLabel.text!, tORf: false)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
