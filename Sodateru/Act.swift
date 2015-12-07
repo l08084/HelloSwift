@@ -75,7 +75,7 @@ public class Action {
         
         //間違い文章データリスト
         let falseSntncList:[String] = mgr.getSentenceListByFlag("2")
-        var judge = false
+        let judge = false
         for falseSntnc in falseSntncList {
             if (sentence == falseSntnc) {
                 judge == true
@@ -94,7 +94,7 @@ public class Action {
     /**
      * 文章登録
      **/
-    private func registerASentence(sntnc: String) {
+    func registerASentence(sntnc: String) {
         
         util.appedStringToFile(sntnc, fileName: sntncFName)
     }
@@ -106,7 +106,7 @@ public class Action {
     
         
         // 文章データリスト
-        var sntncDataList = util.readFileAsArray(sntncFName)
+        let sntncDataList = util.readFileAsArray(sntncFName)
         var contents:String = ""
         var memoFlag:String = "-"
         
@@ -120,10 +120,12 @@ public class Action {
         for var sntncData in sntncDataList {
             if (sntncData[0] == sntnc) {
                 sntncData[1] = memoFlag
+                print("イコール")
             }
-            contents = sntncData[0] + sntncData[1] + "\n"
+            contents = sntncData[0] + "," + sntncData[1] + "\n"
         }
         util.writeAStringToFile(contents, fileName: sntncFName)
+        //util.appedStringToFile(contents, fileName: sntncFName)
     }
     
     /**

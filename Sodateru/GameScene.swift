@@ -89,7 +89,6 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
         player = SKSpriteNode(texture: playerTexture[0])
         player.position = CGPoint(x: self.frame.size.width * 0.35, y: self.frame.size.height * 0.6)
         player.runAction(loopAnimation)
-        //player.physicsBody = SKPhysicsBody(circleOfRadius: 40)
         
         self.addChild(player)
     }

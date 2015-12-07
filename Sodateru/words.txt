@@ -34,3 +34,6 @@ pronoun,かるい
 pronoun,おもい
 pronoun,たかい
 pronoun,ひくい
+verb,もつ
+noun,かばん
+verb,もつ

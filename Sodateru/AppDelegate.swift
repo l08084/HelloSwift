@@ -13,7 +13,11 @@ import Foundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var params: String = ""
+    
+    // 画面遷移先で渡す値を入れる
+    var verb: String = ""
+    var noun: String = ""
+    var pronoun: String = ""
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

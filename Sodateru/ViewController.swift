@@ -11,21 +11,58 @@ import SpriteKit
 import RealmSwift
 
 class ViewController: UIViewController {
-
+    
+    // セレクトボックス
     @IBOutlet weak var selectBox: UIButton!
+    @IBOutlet weak var selectNounBox: UIButton!
+    @IBOutlet weak var selectPronounBox: UIButton!
+    
     @IBOutlet weak var speakLabel: UILabel!
     
-    //選択値
-    var selected = "選択してください"
+    //セレクトボックス画面から値を受け取る
+    var paramV :String = ""
+    var paramN :String = ""
+    var paramP :String = ""
     
+    var act :Action = Action()
+    
+    /**
+     * 話すボタン押下
+     **/
     @IBAction func talking(sender: UIButton) {
         
-        let act = Action()
         let speak = act.generateASentence("NV")
         speakLabel.text = speak
         print("talk:\(speak)")
-        //act.execTest()
+        act.registerASentence(speak + ",-")
     }
+    
+    /**
+     * 登録ボタン押下
+     **/
+    @IBAction func wordRegister(sender: AnyObject) {
+        print("register")
+        
+        // 動詞に単語が設定されていた場合
+        if selectBox.titleLabel!.text != "動詞" {
+            print("動詞:\(selectBox.titleLabel!.text)")
+            act.registerAWord(selectBox.titleLabel!.text!, part: "verb")
+            
+        }
+        
+        // 名詞に単語が設定されていた場合
+        if selectNounBox.titleLabel!.text != "名詞" {
+            print("名詞：\(selectNounBox.titleLabel!.text)")
+            act.registerAWord(selectNounBox.titleLabel!.text!, part: "noun")
+        }
+        
+        // 形容詞に単語が設定されていた場合
+        if selectPronounBox.titleLabel!.text != "形容詞" {
+            print("形容詞：\(selectPronounBox.titleLabel!.text)")
+            act.registerAWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,64 +83,64 @@ class ViewController: UIViewController {
         // ビュー上にシーンを表示
         view.presentScene(scene)
         
-        self.setView()
     }
     
-    func setView() {
-        
-        // プルダウンをボタンで実装
-        selectBox.frame = CGRectMake(0, 0, 100, 100)
-        
-        selectBox.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
-        
-    }
-    
-    // プルダウン（ボタン）がタップされたらプルダウン用の別画面を開く
+    // 動詞ボタンがタップされたらプルダウン用の別画面を開く
     @IBAction func clickButtonSelect(sender: UIButton) {
         
-        // 遷移するViewを定義する.
-        let mySecondViewController: UIViewController = SecondViewController()
-        
-        // アニメーションを設定する.
-        mySecondViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
-        
-        // Viewの移動する.
-        self.presentViewController(mySecondViewController, animated: false, completion: nil)
     }
     
+    // 名詞ボタンがタップされたらプルダウン用の別画面を開く
     @IBAction func nounClickButton(sender: UIButton) {
         
-        // 遷移するViewを定義する.
-        let nounViewController: UIViewController = NounViewController()
-        
-        // アニメーションを設定する.
-        nounViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
-        
-        // Viewの移動する.
-        self.presentViewController(nounViewController, animated: false, completion: nil)
-        
     }
+    
+    // 代名詞ボタンがタップされたらプルダウン用の別画面を開く
     @IBAction func adjectiveClickButton(sender: UIButton) {
         
-        // 遷移するViewを定義する.
-        let adjectiveViewController: UIViewController = AdjectiveViewController()
-        
-        // アニメーションを設定する.
-        adjectiveViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
-        
-        // Viewの移動する.
-        self.presentViewController(adjectiveViewController, animated: false, completion: nil)
-
     }
     
     
-    // プルダウン選択後に戻ってきたら、選択値を取得してviewを再描画します
+    // プルダウン選択後に戻ってきたら、選択値を取得してセレクトボックスを再描画します
    override func viewWillAppear(animated: Bool) {
         let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        self.selected = appDelegate.params
-        print("params: \(appDelegate.params)")
-        self.setView()
+        print("paramsV: \(appDelegate.verb)")
+        print("paramsN: \(appDelegate.noun)")
+        print("paramsP: \(appDelegate.pronoun)")
+    
+        //プルダウン用の画面から値を受け取る
+        paramV = appDelegate.verb
+        paramN = appDelegate.noun
+        paramP = appDelegate.pronoun
+    
+        // 動詞が設定された場合
+        if !paramV.isEmpty {
+            selectBox.setTitle(paramV, forState: .Normal)
+        }
+    
+        // 名詞が設定された場合
+        if !paramN.isEmpty {
+            selectNounBox.setTitle(paramN, forState: .Normal)
+        }
+    
+        // 代名詞が設定された場合
+        if !paramP.isEmpty {
+            selectPronounBox.setTitle(paramP, forState: .Normal)
+        }
     }
+    
+    // ⚪︎ボタン押下
+    @IBAction func sentenceOK(sender: AnyObject) {
+        print("OK:\(speakLabel.text)")
+        act.learnASentence(speakLabel.text!, tORf: true)
+    }
+    
+    // ×ボタン押下
+    @IBAction func sentenceNG(sender: AnyObject) {
+        print("NG:\(speakLabel.text)")
+        act.learnASentence(speakLabel.text!, tORf: false)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
