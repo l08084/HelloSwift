@@ -11,6 +11,7 @@ import Foundation
 public class Manager {
     
     let util = Utility()
+    let mWordFName = "masterWords.txt"
     let wordFName = "words.txt"
     let sntncFName = "sentences.txt"
     
@@ -23,7 +24,7 @@ public class Manager {
         var resultList: [String] = []
         
         /*** 単語リストを取得する ***/
-        wordDataList = util.readFileAsArray(wordFName)
+        wordDataList = util.readFileAsArray(mWordFName)
         
         /*** 品詞別単語リストを生成する ***/
         for wordData in wordDataList {
@@ -33,6 +34,19 @@ public class Manager {
         }
         
         return resultList
+    }
+    
+    /**
+     * 覚えた単語リストgetter（品詞指定なし）
+     **/
+    func getAllWordList() -> [[String]] {
+        
+        var wordDataList: [[String]] = [[]]
+        
+        /*** 覚えた単語リストを取得する ***/
+        wordDataList = util.readFileAsArray(wordFName)
+        
+        return wordDataList
     }
     
     /**
