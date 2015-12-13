@@ -1,1 +1,4 @@
-    
+pronoun,おいしい
+verb,なげる
+noun,ボール
+pronoun,まるい
