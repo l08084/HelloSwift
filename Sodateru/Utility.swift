@@ -12,7 +12,7 @@ public class Utility {
     
     //TODO: パスを動的に取得する
     //var filePath = "/Users/snufkin/Desktop/HelloSwift/Sodateru/"
-    var filePath = "/Users/takuya/Practice/Sodateru/Sodateru/"
+    var filePath = "/Users/snufkin/Desktop/HelloSwift/Sodateru/"
     
     let SEPARATOR:String = ","
     
@@ -35,7 +35,10 @@ public class Utility {
         if existedContents.isEmpty {
             contents = str as NSString
         } else {
-            contents = "\(existedContents)\(str)" as NSString
+            contents = "\(existedContents)" as NSString
+            if (!chekckDataExisted(str)) {
+                contents = "\(contents)\(str)" as NSString
+            }
             print("contents:\(contents)")
         }
         
@@ -47,20 +50,39 @@ public class Utility {
         
     }
     
-    //ファイルへの書き込み（as new）
-    func writeAStringToFile(contents: String, fileName:String) {
+    /**
+     * データの存在チェック
+     **/
+    func chekckDataExisted(str: String) -> Bool {
+        let mgr = Manager()
+        let existedList: [[String]] = mgr.getAllWordList()
+        var resultFlag: Bool = false
         
-        
-        // 書き込み先ファイルのフルパス
-        let fFullName = "\(filePath)\(fileName)"
-        
-        /*** いざ、書き込む ***/
-        do {
-        try contents.writeToFile(fFullName, atomically: true, encoding: NSUTF8StringEncoding)
-        } catch {
+        for existed in existedList {
+            if str == existed[0]+","+existed[1] {
+                resultFlag = true
+            }
         }
+        
+        return resultFlag
     }
     
+    
+    /**
+     * ファイルへの書き込み（as new）
+     **/
+     func writeAStringToFile(contents: String, fileName:String) {
+        
+        // 書き込み先ファイルのフルパス
+        let fFullName = "/Users/snufkin/Desktop/HelloSwift/Sodateru/sentences.txt"
+        
+        /*** 未登録であれば書き込む、でなければ書き込まない ***/
+        print(contents)
+        do {
+            try contents.writeToFile(fFullName, atomically: true, encoding: NSUTF8StringEncoding)
+            } catch {
+        }
+    }
     
     /**
      * ファイル内容読み込み（二次元配列を返す: 行内容をカンマ区切りで配列化したものの配列）
