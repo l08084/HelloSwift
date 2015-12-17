@@ -74,7 +74,7 @@ public class Utility {
      func writeAStringToFile(contents: String, fileName:String) {
         
         // 書き込み先ファイルのフルパス
-        let fFullName = "/Users/snufkin/Desktop/HelloSwift/Sodateru/sentences.txt"
+        let fFullName = "\(filePath)sentences.txt"
         
         /*** 未登録であれば書き込む、でなければ書き込まない ***/
         print(contents)

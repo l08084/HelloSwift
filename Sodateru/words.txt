@@ -2,3 +2,4 @@ pronoun,おいしい
 verb,なげる
 noun,ボール
 pronoun,まるい
+verb,たべる
