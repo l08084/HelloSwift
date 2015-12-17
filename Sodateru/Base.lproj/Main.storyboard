@@ -5,6 +5,33 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
+        <!--Sand Box View Controller-->
+        <scene sceneID="MDB-5s-KjK">
+            <objects>
+                <viewController id="czj-OZ-FE7" customClass="SandBoxViewController" customModule="Sodateru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bro-p8-6vc"/>
+                        <viewControllerLayoutGuide type="bottom" id="laM-GI-WWk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XxP-Nh-hiK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxn-tu-vZu">
+                                <rect key="frame" x="59" y="37" width="30" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="Xnu-ho-Red"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="snB-zY-p9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1807" y="-825"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -81,6 +108,13 @@
                                     <action selector="sentenceOK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oM4-TT-d6R"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTo-gD-OrS">
+                                <rect key="frame" x="343" y="42" width="93" height="30"/>
+                                <state key="normal" title="単語リスト"/>
+                                <connections>
+                                    <segue destination="czj-OZ-FE7" kind="modal" id="jcS-ad-VwE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -93,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1859" y="-917"/>
+            <point key="canvasLocation" x="-2035" y="-950"/>
         </scene>
         <!--Adjective View Controller-->
         <scene sceneID="n8I-C6-LZk">
@@ -182,6 +216,6 @@
         <image name="maru" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="A8B-av-cHI"/>
+        <segue reference="Xnu-ho-Red"/>
     </inferredMetricsTieBreakers>
 </document>
