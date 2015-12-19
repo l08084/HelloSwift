@@ -7,3 +7,6 @@ noun,かばん
 verb,およぐ
 noun,くるま
 pronoun,はやい
+verb,もつ
+noun,うみ
+pronoun,おもい

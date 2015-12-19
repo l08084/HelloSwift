@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     
     var act :Action = Action()
     
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     /**
      * 話すボタン押下
      **/
@@ -50,6 +52,7 @@ class ViewController: UIViewController {
             
             //ボタンのラベルをデフォルトに戻す
             selectBox.setTitle("動詞", forState: .Normal)
+            appDelegate.verb = ""
         }
         
         // 名詞に単語が設定されていた場合
@@ -59,6 +62,7 @@ class ViewController: UIViewController {
             
             //ボタンのラベルをデフォルトに戻す
             selectNounBox.setTitle("名詞", forState: .Normal)
+            appDelegate.noun = ""
         }
         
         // 形容詞に単語が設定されていた場合
@@ -68,6 +72,7 @@ class ViewController: UIViewController {
             
             //ボタンのラベルをデフォルトに戻す
             selectPronounBox.setTitle("形容詞", forState: .Normal)
+            appDelegate.pronoun = ""
         }
     }
     
@@ -111,7 +116,7 @@ class ViewController: UIViewController {
     
     // プルダウン選択後に戻ってきたら、選択値を取得してセレクトボックスを再描画します
    override func viewWillAppear(animated: Bool) {
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
         print("paramsV: \(appDelegate.verb)")
         print("paramsN: \(appDelegate.noun)")
         print("paramsP: \(appDelegate.pronoun)")
