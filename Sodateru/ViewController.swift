@@ -48,18 +48,26 @@ class ViewController: UIViewController {
             print("動詞:\(selectBox.titleLabel!.text)")
             act.registerAWord(selectBox.titleLabel!.text!, part: "verb")
             
+            //ボタンのラベルをデフォルトに戻す
+            selectBox.setTitle("動詞", forState: .Normal)
         }
         
         // 名詞に単語が設定されていた場合
         if selectNounBox.titleLabel!.text != "名詞" {
             print("名詞：\(selectNounBox.titleLabel!.text)")
             act.registerAWord(selectNounBox.titleLabel!.text!, part: "noun")
+            
+            //ボタンのラベルをデフォルトに戻す
+            selectNounBox.setTitle("名詞", forState: .Normal)
         }
         
         // 形容詞に単語が設定されていた場合
         if selectPronounBox.titleLabel!.text != "形容詞" {
             print("形容詞：\(selectPronounBox.titleLabel!.text)")
             act.registerAWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
+            
+            //ボタンのラベルをデフォルトに戻す
+            selectPronounBox.setTitle("形容詞", forState: .Normal)
         }
     }
     

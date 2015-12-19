@@ -4,3 +4,6 @@ noun,ボール
 pronoun,まるい
 verb,たべる
 noun,かばん
+verb,およぐ
+noun,くるま
+pronoun,はやい
