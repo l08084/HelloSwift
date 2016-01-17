@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/ViewController.swift"
-            timestampString = "472198932.077259"
+            timestampString = "474726878.358561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -192,6 +192,130 @@
             startingLineNumber = "29"
             endingLineNumber = "29"
             landmarkName = "appedStringToFile(_:fileName:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sodateru/Word.swift"
+            timestampString = "474633733.466898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sodateru.Word.init (Sodateru.Word.Type)() -&gt; Sodateru.Word"
+                  moduleName = "Sodateru"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takuya/Practice/Sodateru/Sodateru/Word.swift"
+                  timestampString = "474635227.84218"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sodateru.Word.init (Sodateru.Word.Type)(value : Swift.AnyObject) -&gt; Sodateru.Word"
+                  moduleName = "Sodateru"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takuya/Practice/Sodateru/Sodateru/Word.swift"
+                  timestampString = "474635227.842437"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sodateru.Word.init (Sodateru.Word.Type)(realm : __ObjC.RLMRealm, schema : __ObjC.RLMObjectSchema) -&gt; Sodateru.Word"
+                  moduleName = "Sodateru"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takuya/Practice/Sodateru/Sodateru/Word.swift"
+                  timestampString = "474635227.842701"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sodateru.Word.init (Sodateru.Word.Type)(value : Swift.AnyObject, schema : __ObjC.RLMSchema) -&gt; Sodateru.Word"
+                  moduleName = "Sodateru"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takuya/Practice/Sodateru/Sodateru/Word.swift"
+                  timestampString = "474635227.842946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sodateru/ViewController.swift"
+            timestampString = "474726878.358561"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sodateru/ViewController.swift"
+            timestampString = "474726878.358561"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sodateru/ViewController.swift"
+            timestampString = "474726878.358561"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "dataSetting()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,5 +1,5 @@
 //
-//  Word.swift
+//  MasterWord.swift
 //  Sodateru
 //
 //  Created by 中安拓也 on 2016/01/16.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Word: Object {
+class MasterWord: Object {
     
     dynamic var word = ""
     dynamic var part = ""
@@ -17,4 +17,5 @@ class Word: Object {
     override static func primaryKey() -> String? {
         return "word"
     }
+    
 }

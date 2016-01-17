@@ -1,5 +1,5 @@
 //
-//  Word.swift
+//  Sentence.swift
 //  Sodateru
 //
 //  Created by 中安拓也 on 2016/01/16.
@@ -9,12 +9,13 @@
 import Foundation
 import RealmSwift
 
-class Word: Object {
+class Sentence: Object {
     
-    dynamic var word = ""
-    dynamic var part = ""
+    dynamic var sentence = ""
+    dynamic var flg = ""
     
     override static func primaryKey() -> String? {
-        return "word"
+        return "sentence"
     }
+    
 }

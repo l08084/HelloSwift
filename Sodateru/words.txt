@@ -10,3 +10,6 @@ pronoun,はやい
 verb,もつ
 noun,うみ
 pronoun,おもい
+noun,りんご
+pronoun,おおきい
+verb,のる

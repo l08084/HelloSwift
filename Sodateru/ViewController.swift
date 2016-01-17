@@ -12,11 +12,14 @@ import RealmSwift
 
 class ViewController: UIViewController {
     
-    // セレクトボックス
+    // セレクトボックス(動詞)
     @IBOutlet weak var selectBox: UIButton!
+    // セレクトボックス(名刺)
     @IBOutlet weak var selectNounBox: UIButton!
+    // セレクトボックス(形容詞)
     @IBOutlet weak var selectPronounBox: UIButton!
     
+    // 生成した文章を表示するラベル
     @IBOutlet weak var speakLabel: UILabel!
     
     //セレクトボックス画面から値を受け取る
@@ -33,10 +36,15 @@ class ViewController: UIViewController {
      **/
     @IBAction func talking(sender: UIButton) {
         
+        // 文章を生成する
         let speak = act.generateASentence("NV")
         speakLabel.text = speak
+        
         print("talk:\(speak)")
+        
+        // "sentences.txt"に生成した文を保存
         act.registerASentence(speak + ",-")
+        
     }
     
     /**
@@ -48,6 +56,8 @@ class ViewController: UIViewController {
         // 動詞に単語が設定されていた場合
         if selectBox.titleLabel!.text != "動詞" {
             print("動詞:\(selectBox.titleLabel!.text)")
+            
+            // "words.txt"に動詞を記録
             act.registerAWord(selectBox.titleLabel!.text!, part: "verb")
             
             //ボタンのラベルをデフォルトに戻す
@@ -58,6 +68,8 @@ class ViewController: UIViewController {
         // 名詞に単語が設定されていた場合
         if selectNounBox.titleLabel!.text != "名詞" {
             print("名詞：\(selectNounBox.titleLabel!.text)")
+            
+            // "words.txt"に名詞を記録
             act.registerAWord(selectNounBox.titleLabel!.text!, part: "noun")
             
             //ボタンのラベルをデフォルトに戻す
@@ -67,7 +79,10 @@ class ViewController: UIViewController {
         
         // 形容詞に単語が設定されていた場合
         if selectPronounBox.titleLabel!.text != "形容詞" {
+            
             print("形容詞：\(selectPronounBox.titleLabel!.text)")
+            
+            // "words.txt"に形容詞を記録
             act.registerAWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
             
             //ボタンのラベルをデフォルトに戻す
@@ -87,6 +102,7 @@ class ViewController: UIViewController {
         
         // FPSの表示
         view.showsFPS = true
+        
         // ノード数の表示
         view.showsNodeCount = true
         
@@ -96,6 +112,8 @@ class ViewController: UIViewController {
         // ビュー上にシーンを表示
         view.presentScene(scene)
         
+        // Realm(DB)の初期設定をスタート
+        dataSetting()
     }
     
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く
@@ -160,5 +178,84 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func dataSetting() {
+        
+        var words: [String] = ["りんご", "たべる", "ボール", "なげる", "まるい", "おいしい", "かばん",
+                                "でんしゃ", "くるま", "うみ", "おかし", "いす", "つくえ", "はな", "たまご",
+                                "ふく", "もつ", "はしる", "のる", "およぐ", "わたす", "すわる", "つかう",
+                                "おく", "きる", "わる", "きれい", "ひろい", "はやい", "おおきい", "ちいさい",
+                                "かわいい", "かるい", "おもい", "たかい", "ひくい"]
+        
+        var parts: [String] = ["noun", "verb", "noun", "verb", "pronoun", "pronoun", "noun",
+                                "noun", "noun", "noun", "noun", "noun", "noun", "noun", "noun",
+                                "noun", "verb", "verb", "verb", "verb", "verb", "verb", "verb",
+                                "verb", "verb", "verb", "pronoun", "pronoun", "pronoun", "pronoun",
+                                "pronoun", "pronoun", "pronoun", "pronoun", "pronoun", "pronoun"]
+        
+        var masterWords: [MasterWord]  = []
+        
+        
+        // デフォルトRealmを取得する
+        let realm = try! Realm()
+        
+        print("realm:\(realm.path)")
+        
+        // トランザクションを開始して、オブジェクトをRealmに追加する
+        try! realm.write {
+            
+            // データがなければ、登録(あれば更新)
+            for num in 0..<words.count {
+                
+                masterWords.append(MasterWord())
+                
+                masterWords[num].word = words[num]
+                masterWords[num].part = parts[num]
+                
+                realm.add(masterWords[num], update: true)
+            }
+            /*
+            masterWord.word = "りんご"
+            masterWord.part = "noun"
+
+            realm.add(masterWord, update: true)
+            
+            let masterWord2 = MasterWord()
+            
+
+            masterWord2.part = "verb"
+            masterWord2.word = "たべる"
+            realm.add(masterWord2, update: true)
+            
+            let masterWord3 = MasterWord()
+            
+            masterWord3.part = "noun"
+            masterWord3.word = "ボール"
+            realm.add(masterWord3, update: true)
+            
+            let masterWord4 = MasterWord()
+            
+            masterWord4.part = "verb"
+            masterWord4.word = "なげる"
+            
+            realm.add(masterWord4, update: true)
+            
+            let masterWord5 = MasterWord()
+            
+            masterWord5.part = "pronoun"
+            masterWord5.word = "まるい"
+            
+            realm.add(masterWord5, update: true)
+            
+            let masterWord6 = MasterWord()
+            
+            masterWord6.part = "pronoun"
+            masterWord6.word = "おいしい"
+            realm.add(masterWord6, update: true)
+            
+            */
+
+        }
+
+    }
 }
 
