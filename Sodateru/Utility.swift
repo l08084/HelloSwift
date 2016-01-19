@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 public class Utility {
     
@@ -107,6 +108,26 @@ public class Utility {
         }
         
         return result
+    }
+    
+    /**
+     * DB(Realm)内容読み込み、対象テーブルはMasterWord（指定したpartのWord文字列配列を返す）
+     **/
+    func findMasterWord(part: String) -> [String] {
+        
+        var resultList: [String] = []
+        
+        let realm = try! Realm()
+        
+        // 引数で指定した品詞の単語全てをDBから取得
+        let masterWords = realm.objects(MasterWord).filter("part = %@", part)
+        
+        // Word部分のみを取得
+        for masterWord in masterWords {
+            resultList.append(masterWord.word)
+        }
+        
+        return resultList
     }
     
     /**

@@ -35,8 +35,9 @@ class AdjectiveViewController: UIViewController, UITableViewDelegate, UITableVie
         // Delegateを設定する.
         myTableView.delegate = self
         
-        let act = Action()
-        myItems = act.refWordList("pronoun")
+        // DBから名詞の単語を取り出す
+        let util = Utility()
+        myItems = util.findMasterWord("pronoun")
         
         // Viewに追加する.
         self.view.addSubview(myTableView)

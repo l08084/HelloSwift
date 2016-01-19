@@ -35,14 +35,16 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Delegateを設定する.
         myTableView.delegate = self
         
-        // リストから動詞の単語を取り出す
-        let act = Action()
-        myItems = act.refWordList("verb")
+        // DBから動詞の単語を取り出す
+        let util = Utility()
+        myItems = util.findMasterWord("verb")
         
         // Viewに追加する.
         self.view.addSubview(myTableView)
         
     }
+    
+    
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
