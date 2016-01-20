@@ -58,7 +58,9 @@ class ViewController: UIViewController {
             print("動詞:\(selectBox.titleLabel!.text)")
             
             // "words.txt"に動詞を記録
-            act.registerAWord(selectBox.titleLabel!.text!, part: "verb")
+            //act.registerAWord(selectBox.titleLabel!.text!, part: "verb")
+            let util = Utility()
+            util.saveWord(selectBox.titleLabel!.text!, part: "verb")
             
             //ボタンのラベルをデフォルトに戻す
             selectBox.setTitle("動詞", forState: .Normal)
@@ -70,7 +72,9 @@ class ViewController: UIViewController {
             print("名詞：\(selectNounBox.titleLabel!.text)")
             
             // "words.txt"に名詞を記録
-            act.registerAWord(selectNounBox.titleLabel!.text!, part: "noun")
+            //act.registerAWord(selectNounBox.titleLabel!.text!, part: "noun")
+            let util = Utility()
+            util.saveWord(selectNounBox.titleLabel!.text!, part: "noun")
             
             //ボタンのラベルをデフォルトに戻す
             selectNounBox.setTitle("名詞", forState: .Normal)
@@ -83,7 +87,9 @@ class ViewController: UIViewController {
             print("形容詞：\(selectPronounBox.titleLabel!.text)")
             
             // "words.txt"に形容詞を記録
-            act.registerAWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
+            //act.registerAWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
+            let util = Utility()
+            util.saveWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
             
             //ボタンのラベルをデフォルトに戻す
             selectPronounBox.setTitle("形容詞", forState: .Normal)
@@ -178,6 +184,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     * DB初期設定
+     **/
     func dataSetting() {
         
         var words: [String] = ["りんご", "たべる", "ボール", "なげる", "まるい", "おいしい", "かばん",
@@ -198,6 +207,7 @@ class ViewController: UIViewController {
         // デフォルトRealmを取得する
         let realm = try! Realm()
         
+        // Realmファイルが現在配置されている場所を表示
         print("realm:\(realm.path)")
         
         // トランザクションを開始して、オブジェクトをRealmに追加する
@@ -213,46 +223,6 @@ class ViewController: UIViewController {
                 
                 realm.add(masterWords[num], update: true)
             }
-            /*
-            masterWord.word = "りんご"
-            masterWord.part = "noun"
-
-            realm.add(masterWord, update: true)
-            
-            let masterWord2 = MasterWord()
-            
-
-            masterWord2.part = "verb"
-            masterWord2.word = "たべる"
-            realm.add(masterWord2, update: true)
-            
-            let masterWord3 = MasterWord()
-            
-            masterWord3.part = "noun"
-            masterWord3.word = "ボール"
-            realm.add(masterWord3, update: true)
-            
-            let masterWord4 = MasterWord()
-            
-            masterWord4.part = "verb"
-            masterWord4.word = "なげる"
-            
-            realm.add(masterWord4, update: true)
-            
-            let masterWord5 = MasterWord()
-            
-            masterWord5.part = "pronoun"
-            masterWord5.word = "まるい"
-            
-            realm.add(masterWord5, update: true)
-            
-            let masterWord6 = MasterWord()
-            
-            masterWord6.part = "pronoun"
-            masterWord6.word = "おいしい"
-            realm.add(masterWord6, update: true)
-            
-            */
 
         }
 
