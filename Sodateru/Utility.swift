@@ -85,20 +85,6 @@ public class Utility {
         }
     }
     
-    func saveWord(word: String, part: String) {
-        
-        let realm = try! Realm()
-        
-        let wo = Word()
-        
-        wo.word = word
-        wo.part = part
-        
-        try! realm.write {
-            realm.add(wo, update: true)
-        }
-    }
-    
     
     /**
      * ファイル内容読み込み（二次元配列を返す: 行内容をカンマ区切りで配列化したものの配列）
@@ -125,26 +111,6 @@ public class Utility {
         return result
     }
     
-    /**
-     * DB(Realm)内容読み込み、対象テーブルはMasterWord（指定したpartのWord文字列配列を返す）
-     * author l08084
-     **/
-    func findMasterWord(part: String) -> [String] {
-        
-        var resultList: [String] = []
-        
-        let realm = try! Realm()
-        
-        // 引数で指定した品詞の単語全てをDBから取得
-        let masterWords = realm.objects(MasterWord).filter("part = %@", part)
-        
-        // Word部分のみを取得
-        for masterWord in masterWords {
-            resultList.append(masterWord.word)
-        }
-        
-        return resultList
-    }
     
     /**
      * ファイル内容読み込み（文字列を返す）

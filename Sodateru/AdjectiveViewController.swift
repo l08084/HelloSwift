@@ -36,8 +36,8 @@ class AdjectiveViewController: UIViewController, UITableViewDelegate, UITableVie
         myTableView.delegate = self
         
         // DBから名詞の単語を取り出す
-        let util = Utility()
-        myItems = util.findMasterWord("pronoun")
+        let repo = Repository()
+        myItems = repo.findMasterWord("pronoun")
         
         // Viewに追加する.
         self.view.addSubview(myTableView)

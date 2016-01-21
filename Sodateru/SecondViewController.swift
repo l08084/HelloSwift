@@ -36,8 +36,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         myTableView.delegate = self
         
         // DBから動詞の単語を取り出す
-        let util = Utility()
-        myItems = util.findMasterWord("verb")
+        let repo = Repository()
+        myItems = repo.findMasterWord("verb")
         
         // Viewに追加する.
         self.view.addSubview(myTableView)

@@ -59,8 +59,8 @@ class ViewController: UIViewController {
             
             // "words.txt"に動詞を記録
             //act.registerAWord(selectBox.titleLabel!.text!, part: "verb")
-            let util = Utility()
-            util.saveWord(selectBox.titleLabel!.text!, part: "verb")
+            let repo = Repository()
+            repo.saveWord(selectBox.titleLabel!.text!, part: "verb")
             
             //ボタンのラベルをデフォルトに戻す
             selectBox.setTitle("動詞", forState: .Normal)
@@ -73,8 +73,8 @@ class ViewController: UIViewController {
             
             // "words.txt"に名詞を記録
             //act.registerAWord(selectNounBox.titleLabel!.text!, part: "noun")
-            let util = Utility()
-            util.saveWord(selectNounBox.titleLabel!.text!, part: "noun")
+            let repo = Repository()
+            repo.saveWord(selectNounBox.titleLabel!.text!, part: "noun")
             
             //ボタンのラベルをデフォルトに戻す
             selectNounBox.setTitle("名詞", forState: .Normal)
@@ -88,8 +88,8 @@ class ViewController: UIViewController {
             
             // "words.txt"に形容詞を記録
             //act.registerAWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
-            let util = Utility()
-            util.saveWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
+            let repo = Repository()
+            repo.saveWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
             
             //ボタンのラベルをデフォルトに戻す
             selectPronounBox.setTitle("形容詞", forState: .Normal)
@@ -119,7 +119,8 @@ class ViewController: UIViewController {
         view.presentScene(scene)
         
         // Realm(DB)の初期設定をスタート
-        dataSetting()
+        let repo = Repository()
+        repo.dataSetting()
     }
     
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く
@@ -184,48 +185,5 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /**
-     * DB初期設定
-     **/
-    func dataSetting() {
-        
-        var words: [String] = ["りんご", "たべる", "ボール", "なげる", "まるい", "おいしい", "かばん",
-                                "でんしゃ", "くるま", "うみ", "おかし", "いす", "つくえ", "はな", "たまご",
-                                "ふく", "もつ", "はしる", "のる", "およぐ", "わたす", "すわる", "つかう",
-                                "おく", "きる", "わる", "きれい", "ひろい", "はやい", "おおきい", "ちいさい",
-                                "かわいい", "かるい", "おもい", "たかい", "ひくい"]
-        
-        var parts: [String] = ["noun", "verb", "noun", "verb", "pronoun", "pronoun", "noun",
-                                "noun", "noun", "noun", "noun", "noun", "noun", "noun", "noun",
-                                "noun", "verb", "verb", "verb", "verb", "verb", "verb", "verb",
-                                "verb", "verb", "verb", "pronoun", "pronoun", "pronoun", "pronoun",
-                                "pronoun", "pronoun", "pronoun", "pronoun", "pronoun", "pronoun"]
-        
-        var masterWords: [MasterWord]  = []
-        
-        
-        // デフォルトRealmを取得する
-        let realm = try! Realm()
-        
-        // Realmファイルが現在配置されている場所を表示
-        print("realm:\(realm.path)")
-        
-        // トランザクションを開始して、オブジェクトをRealmに追加する
-        try! realm.write {
-            
-            // データがなければ、登録(あれば更新)
-            for num in 0..<words.count {
-                
-                masterWords.append(MasterWord())
-                
-                masterWords[num].word = words[num]
-                masterWords[num].part = parts[num]
-                
-                realm.add(masterWords[num], update: true)
-            }
-
-        }
-
-    }
 }
 

@@ -35,8 +35,8 @@ class NounViewController: UIViewController, UITableViewDelegate, UITableViewData
         myTableView.delegate = self
         
         // DBから名詞の単語を取り出す
-        let util = Utility()
-        myItems = util.findMasterWord("noun")
+        let repo = Repository()
+        myItems = repo.findMasterWord("noun")
         
         // Viewに追加する.
         self.view.addSubview(myTableView)

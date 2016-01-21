@@ -15,6 +15,7 @@
 		B09452991C4A53470052BD56 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09452981C4A53470052BD56 /* Word.swift */; };
 		B094529B1C4A597A0052BD56 /* MasterWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B094529A1C4A597A0052BD56 /* MasterWord.swift */; };
 		B094529D1C4A59E50052BD56 /* Sentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B094529C1C4A59E50052BD56 /* Sentence.swift */; };
+		B094529F1C5121470052BD56 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B094529E1C5121470052BD56 /* Repository.swift */; };
 		B0B8B6381BF5B9B30029799C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B8B6371BF5B9B30029799C /* AppDelegate.swift */; };
 		B0B8B63A1BF5B9B30029799C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B8B6391BF5B9B30029799C /* ViewController.swift */; };
 		B0B8B63D1BF5B9B30029799C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B8B63B1BF5B9B30029799C /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		B09452981C4A53470052BD56 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		B094529A1C4A597A0052BD56 /* MasterWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterWord.swift; sourceTree = "<group>"; };
 		B094529C1C4A59E50052BD56 /* Sentence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentence.swift; sourceTree = "<group>"; };
+		B094529E1C5121470052BD56 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		B0B8B6341BF5B9B30029799C /* Sodateru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sodateru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B8B6371BF5B9B30029799C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B8B6391BF5B9B30029799C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				B09452981C4A53470052BD56 /* Word.swift */,
 				B094529A1C4A597A0052BD56 /* MasterWord.swift */,
 				B094529C1C4A59E50052BD56 /* Sentence.swift */,
+				B094529E1C5121470052BD56 /* Repository.swift */,
 			);
 			path = Sodateru;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				B0B8B6581BF5BD080029799C /* GameScene.swift in Sources */,
 				B09452991C4A53470052BD56 /* Word.swift in Sources */,
 				B0DC6DE01C030D64000AA3B8 /* Act.swift in Sources */,
+				B094529F1C5121470052BD56 /* Repository.swift in Sources */,
 				B04D210D1C22DC2A005588AE /* SandBoxViewController.swift in Sources */,
 				B0B8B63A1BF5B9B30029799C /* ViewController.swift in Sources */,
 				B0DC6DE11C030D64000AA3B8 /* Manager.swift in Sources */,
