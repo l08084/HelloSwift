@@ -45,6 +45,9 @@ class ViewController: UIViewController {
         // "sentences.txt"に生成した文を保存
         act.registerASentence(speak + ",-")
         
+        // Sentenceに生成した文を保存
+        let repo = Repository()
+        repo.saveSentence(speak, flg: "-")
     }
     
     /**
@@ -57,8 +60,7 @@ class ViewController: UIViewController {
         if selectBox.titleLabel!.text != "動詞" {
             print("動詞:\(selectBox.titleLabel!.text)")
             
-            // "words.txt"に動詞を記録
-            //act.registerAWord(selectBox.titleLabel!.text!, part: "verb")
+            // Wordテーブルに動詞を記録
             let repo = Repository()
             repo.saveWord(selectBox.titleLabel!.text!, part: "verb")
             
@@ -71,8 +73,7 @@ class ViewController: UIViewController {
         if selectNounBox.titleLabel!.text != "名詞" {
             print("名詞：\(selectNounBox.titleLabel!.text)")
             
-            // "words.txt"に名詞を記録
-            //act.registerAWord(selectNounBox.titleLabel!.text!, part: "noun")
+            // Wordテーブルに名詞を記録
             let repo = Repository()
             repo.saveWord(selectNounBox.titleLabel!.text!, part: "noun")
             
@@ -86,8 +87,7 @@ class ViewController: UIViewController {
             
             print("形容詞：\(selectPronounBox.titleLabel!.text)")
             
-            // "words.txt"に形容詞を記録
-            //act.registerAWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
+            // Wordテーブルに形容詞を記録
             let repo = Repository()
             repo.saveWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
             

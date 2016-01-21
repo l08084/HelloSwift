@@ -77,6 +77,27 @@ public class Repository {
     }
     
     /**
+     * リストボックスで選択した単語をDBに保存
+     **/
+    func saveSentence(sentence: String, flg: String) {
+        
+        // デフォルトRealmを取得する
+        let realm = try! Realm()
+        
+        // Wordテーブルのmodelオブジェクトを宣言
+        let sntnc = Sentence()
+        
+        sntnc.sentence = sentence
+        sntnc.flg = flg
+        
+        try! realm.write {
+            
+            // DBにデータがなければ、登録(あれば更新)
+            realm.add(sntnc, update: true)
+        }
+    }
+    
+    /**
      * DB(Realm)内容読み込み、対象テーブルはMasterWord（指定したpartのWord文字列配列を返す）
      * author l08084
      **/
