@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     @IBAction func talking(sender: UIButton) {
         
         // 文章を生成する
-        let speak = act.generateASentence("NV")
+        let speak = act.generateASentenceDB("NV")
         speakLabel.text = speak
         
         print("talk:\(speak)")
@@ -174,8 +174,8 @@ class ViewController: UIViewController {
         var repo = Repository()
         repo.saveSentence(speakLabel.text!, flg: "1")
         
-        // 文章を生成する
-        let speak = act.generateASentence("NV")
+        // 文章を判定したら、違う文に切り替える
+        let speak = act.generateASentenceDB("NV")
         speakLabel.text = speak
         
         print("talk:\(speak)")
@@ -195,8 +195,8 @@ class ViewController: UIViewController {
         var repo = Repository()
         repo.saveSentence(speakLabel.text!, flg: "2")
         
-        // 文章を生成する
-        let speak = act.generateASentence("NV")
+        // 文章を判定したら、違う文に切り替える
+        let speak = act.generateASentenceDB("NV")
         speakLabel.text = speak
         
         print("talk:\(speak)")

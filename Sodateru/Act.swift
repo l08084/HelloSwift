@@ -90,6 +90,50 @@ public class Action {
         return sentence
     }
     
+    /**
+     * 文章生成(DB版)
+     **/
+    func generateASentenceDB(form: String) -> String {
+        
+        var sentence: String = ""
+        let repo = Repository()
+        let sList = repo.findWord("noun")
+        let vList = repo.findWord("verb")
+        let pList = repo.findWord("pronoun")
+        
+        /*** 選ばれた単語で文章を生成する ***/
+        switch form {
+            // 名詞+動詞
+        case formSV:
+            let s = util.chooseAWordFromAList(sList)
+            let v = util.chooseAWordFromAList(vList)
+            sentence = "\(s) を \(v)"
+            // 名詞+形容詞
+        case formSP:
+            let s = util.chooseAWordFromAList(sList)
+            let p = util.chooseAWordFromAList(pList)
+            sentence = "\(s) は \(p)"
+        default:
+            sentence = ""
+        }
+        
+        //間違い文章データリスト
+        let falseSntncList:[String] = mgr.getSentenceListByFlag("2")
+        var judge = false
+        for falseSntnc in falseSntncList {
+            if (sentence == falseSntnc) {
+                judge = true
+            }
+        }
+        if (judge) {
+            sentence = generateASentenceDB(form)
+        } else {
+        }
+        
+        
+        return sentence
+    }
+    
     
     /**
      * 文章登録

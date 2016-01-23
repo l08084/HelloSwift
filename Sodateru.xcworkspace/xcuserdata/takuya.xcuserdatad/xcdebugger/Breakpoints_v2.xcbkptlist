@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/Act.swift"
-            timestampString = "471074353.263899"
+            timestampString = "475241376.115044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "learnASentence(_:tORf:)"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "generateASentenceDB(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/Act.swift"
-            timestampString = "471078724.68042"
+            timestampString = "475241376.115044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "learnASentence(_:tORf:)"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "generateASentenceDB(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,12 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/Act.swift"
-            timestampString = "471091966.454103"
+            timestampString = "475241376.115044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "learnASentence(_:tORf:)"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "generateASentenceDB(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

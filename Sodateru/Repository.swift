@@ -119,4 +119,45 @@ public class Repository {
         return resultList
     }
     
+    /**
+     * DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
+     * author l08084
+     **/
+    func findWord(part: String) -> [String] {
+        
+        var resultList: [String] = []
+        
+        let realm = try! Realm()
+        
+        // 引数で指定した品詞の単語全てをDBから取得
+        let words = realm.objects(Word).filter("part = %@", part)
+        
+        // Word部分のみを取得
+        for w in words {
+            resultList.append(w.word)
+        }
+        
+        return resultList
+    }
+    
+    /**
+     * DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
+     * author l08084
+     **/
+    func findSentenceByFlg(flg: String) -> [String] {
+        
+        var resultList: [String] = []
+        
+        let realm = try! Realm()
+        
+        // 引数で指定した品詞の単語全てをDBから取得
+        let sentences = realm.objects(Sentence).filter("flg = %@", flg)
+        
+        // Word部分のみを取得
+        for s in sentences {
+            resultList.append(s.sentence)
+        }
+        
+        return resultList
+    }
 }
