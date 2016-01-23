@@ -97,6 +97,7 @@ public class Repository {
         }
     }
     
+    
     /**
      * DB(Realm)内容読み込み、対象テーブルはMasterWord（指定したpartのWord文字列配列を返す）
      * author l08084

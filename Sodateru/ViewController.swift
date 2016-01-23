@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     // セレクトボックス(動詞)
     @IBOutlet weak var selectBox: UIButton!
-    // セレクトボックス(名刺)
+    // セレクトボックス(名詞)
     @IBOutlet weak var selectNounBox: UIButton!
     // セレクトボックス(形容詞)
     @IBOutlet weak var selectPronounBox: UIButton!
@@ -171,12 +171,42 @@ class ViewController: UIViewController {
     @IBAction func sentenceOK(sender: AnyObject) {
         print("OK:\(speakLabel.text)")
         act.learnASentence(speakLabel.text!, tORf: true)
+        var repo = Repository()
+        repo.saveSentence(speakLabel.text!, flg: "1")
+        
+        // 文章を生成する
+        let speak = act.generateASentence("NV")
+        speakLabel.text = speak
+        
+        print("talk:\(speak)")
+        
+        // "sentences.txt"に生成した文を保存
+        act.registerASentence(speak + ",-")
+        
+        // Sentenceに生成した文を保存
+        repo = Repository()
+        repo.saveSentence(speak, flg: "-")
     }
     
     // ×ボタン押下
     @IBAction func sentenceNG(sender: AnyObject) {
         print("NG:\(speakLabel.text)")
         act.learnASentence(speakLabel.text!, tORf: false)
+        var repo = Repository()
+        repo.saveSentence(speakLabel.text!, flg: "2")
+        
+        // 文章を生成する
+        let speak = act.generateASentence("NV")
+        speakLabel.text = speak
+        
+        print("talk:\(speak)")
+        
+        // "sentences.txt"に生成した文を保存
+        act.registerASentence(speak + ",-")
+        
+        // Sentenceに生成した文を保存
+        repo = Repository()
+        repo.saveSentence(speak, flg: "-")
     }
     
     
