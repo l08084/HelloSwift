@@ -40,8 +40,6 @@ class ViewController: UIViewController {
         let speak = act.generateASentenceDB("NV")
         speakLabel.text = speak
         
-        print("talk:\(speak)")
-        
         // "sentences.txt"に生成した文を保存
         act.registerASentence(speak + ",-")
         
@@ -54,11 +52,9 @@ class ViewController: UIViewController {
      * 登録ボタン押下
      **/
     @IBAction func wordRegister(sender: AnyObject) {
-        print("register")
         
         // 動詞に単語が設定されていた場合
         if selectBox.titleLabel!.text != "動詞" {
-            print("動詞:\(selectBox.titleLabel!.text)")
             
             // Wordテーブルに動詞を記録
             let repo = Repository()
@@ -71,7 +67,6 @@ class ViewController: UIViewController {
         
         // 名詞に単語が設定されていた場合
         if selectNounBox.titleLabel!.text != "名詞" {
-            print("名詞：\(selectNounBox.titleLabel!.text)")
             
             // Wordテーブルに名詞を記録
             let repo = Repository()
@@ -84,8 +79,6 @@ class ViewController: UIViewController {
         
         // 形容詞に単語が設定されていた場合
         if selectPronounBox.titleLabel!.text != "形容詞" {
-            
-            print("形容詞：\(selectPronounBox.titleLabel!.text)")
             
             // Wordテーブルに形容詞を記録
             let repo = Repository()
@@ -120,7 +113,10 @@ class ViewController: UIViewController {
         
         // Realm(DB)の初期設定をスタート
         let repo = Repository()
-        repo.dataSetting()
+        // MasterWordの初期設定
+        repo.masterWordSttng()
+        // Characterの初期設定
+        repo.characterSttng()
     }
     
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く
@@ -141,10 +137,6 @@ class ViewController: UIViewController {
     
     // プルダウン選択後に戻ってきたら、選択値を取得してセレクトボックスを再描画します
    override func viewWillAppear(animated: Bool) {
-    
-        print("paramsV: \(appDelegate.verb)")
-        print("paramsN: \(appDelegate.noun)")
-        print("paramsP: \(appDelegate.pronoun)")
     
         //プルダウン用の画面から値を受け取る
         paramV = appDelegate.verb
@@ -169,16 +161,14 @@ class ViewController: UIViewController {
     
     // ⚪︎ボタン押下
     @IBAction func sentenceOK(sender: AnyObject) {
-        print("OK:\(speakLabel.text)")
-        act.learnASentence(speakLabel.text!, tORf: true)
+        
+        // 文章を丸(1)に設定
         var repo = Repository()
         repo.saveSentence(speakLabel.text!, flg: "1")
         
         // 文章を判定したら、違う文に切り替える
         let speak = act.generateASentenceDB("NV")
         speakLabel.text = speak
-        
-        print("talk:\(speak)")
         
         // "sentences.txt"に生成した文を保存
         act.registerASentence(speak + ",-")
@@ -190,16 +180,14 @@ class ViewController: UIViewController {
     
     // ×ボタン押下
     @IBAction func sentenceNG(sender: AnyObject) {
-        print("NG:\(speakLabel.text)")
-        act.learnASentence(speakLabel.text!, tORf: false)
+
+        // 文章をばつ(2)に設定
         var repo = Repository()
         repo.saveSentence(speakLabel.text!, flg: "2")
         
         // 文章を判定したら、違う文に切り替える
         let speak = act.generateASentenceDB("NV")
         speakLabel.text = speak
-        
-        print("talk:\(speak)")
         
         // "sentences.txt"に生成した文を保存
         act.registerASentence(speak + ",-")

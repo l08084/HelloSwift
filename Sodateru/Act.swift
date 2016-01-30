@@ -39,7 +39,6 @@ public class Action {
         return mgr.getWordList(part)
     }
     
-    
     /**
      * 覚えた文章リスト参照
      **/
@@ -86,7 +85,6 @@ public class Action {
         } else {
         }
         
-        
         return sentence
     }
     
@@ -130,7 +128,6 @@ public class Action {
         } else {
         }
         
-        
         return sentence
     }
     
@@ -168,7 +165,6 @@ public class Action {
             contents += sntncData[0] + "," + sntncData[1] + "\n"
         }
         util.writeAStringToFile(contents, fileName: sntncFName)
-        //util.appedStringToFile(contents, fileName: sntncFName)
     }
     
     /**
@@ -224,19 +220,19 @@ public class Action {
         
         //refASentence用
         var sentence = generateASentence(formSV);
-        print(sentence)
+
         if (true) {
             registerASentence(sentence)
         }
         sentence = generateASentence(formSP);
-        print(sentence)
+
         if (true) {
             registerASentence(sentence)
         }
         
         //refSentenceList
         let sntncList = refSentenceList()
-        print(sntncList)
+
         
     }
     

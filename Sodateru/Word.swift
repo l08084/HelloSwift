@@ -13,6 +13,7 @@ class Word: Object {
     
     dynamic var word = ""
     dynamic var part = ""
+    dynamic var owner: Character?
     
     override static func primaryKey() -> String? {
         return "word"

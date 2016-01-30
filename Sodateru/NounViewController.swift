@@ -47,7 +47,7 @@ class NounViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let text: String = myItems[indexPath.row]
-        print("text:\(text)")
+
         let appDelegate :AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.noun = text
         performSegueWithIdentifier("nounToViewController", sender: nil)

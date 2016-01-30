@@ -12,6 +12,7 @@
 		9A9FA7AE9D9E53AA54AFA14B /* Pods_Sodateru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54B008B847375A7A760CDF7 /* Pods_Sodateru.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B04D210D1C22DC2A005588AE /* SandBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04D210C1C22DC2A005588AE /* SandBoxViewController.swift */; };
 		B060B4DB1BF6E9E7006707C9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B060B4DA1BF6E9E7006707C9 /* SecondViewController.swift */; };
+		B065E2A51C5CA02200D2BF49 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065E2A41C5CA02100D2BF49 /* Character.swift */; };
 		B09452991C4A53470052BD56 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09452981C4A53470052BD56 /* Word.swift */; };
 		B094529B1C4A597A0052BD56 /* MasterWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B094529A1C4A597A0052BD56 /* MasterWord.swift */; };
 		B094529D1C4A59E50052BD56 /* Sentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B094529C1C4A59E50052BD56 /* Sentence.swift */; };
@@ -48,6 +49,7 @@
 		923C7E5B1C15E09E0063704B /* masterWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = masterWords.txt; sourceTree = "<group>"; };
 		B04D210C1C22DC2A005588AE /* SandBoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandBoxViewController.swift; sourceTree = "<group>"; };
 		B060B4DA1BF6E9E7006707C9 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B065E2A41C5CA02100D2BF49 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		B09452981C4A53470052BD56 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		B094529A1C4A597A0052BD56 /* MasterWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterWord.swift; sourceTree = "<group>"; };
 		B094529C1C4A59E50052BD56 /* Sentence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentence.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				B0EB84F41C02E09000C215C3 /* AdjectiveViewController.swift */,
 				B04D210C1C22DC2A005588AE /* SandBoxViewController.swift */,
 				B09452981C4A53470052BD56 /* Word.swift */,
+				B065E2A41C5CA02100D2BF49 /* Character.swift */,
 				B094529A1C4A597A0052BD56 /* MasterWord.swift */,
 				B094529C1C4A59E50052BD56 /* Sentence.swift */,
 				B094529E1C5121470052BD56 /* Repository.swift */,
@@ -332,6 +335,7 @@
 				B0B8B63A1BF5B9B30029799C /* ViewController.swift in Sources */,
 				B0DC6DE11C030D64000AA3B8 /* Manager.swift in Sources */,
 				B0B8B6381BF5B9B30029799C /* AppDelegate.swift in Sources */,
+				B065E2A51C5CA02200D2BF49 /* Character.swift in Sources */,
 				B094529D1C4A59E50052BD56 /* Sentence.swift in Sources */,
 				B094529B1C4A597A0052BD56 /* MasterWord.swift in Sources */,
 			);

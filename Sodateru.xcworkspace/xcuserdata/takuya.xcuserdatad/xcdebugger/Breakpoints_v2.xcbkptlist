@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/ViewController.swift"
-            timestampString = "475081290.304627"
+            timestampString = "475307082.230745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/Act.swift"
-            timestampString = "475241376.115044"
+            timestampString = "475309349.350725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "generateASentenceDB(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/Utility.swift"
-            timestampString = "474909017.168847"
+            timestampString = "475844404.890098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "writeAStringToFile(_:fileName:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,27 +74,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/Utility.swift"
-            timestampString = "474909017.168847"
+            timestampString = "475844404.890098"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "writeAStringToFile(_:fileName:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sodateru/Utility.swift"
+            timestampString = "475844404.890098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
-            landmarkName = "writeAStringToFile(_:fileName:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sodateru/Utility.swift"
-            timestampString = "474909017.168847"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
             landmarkName = "writeAStringToFile(_:fileName:)"
             landmarkType = "5">
             <Locations>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/Utility.swift"
-            timestampString = "474909017.168847"
+            timestampString = "475844404.890098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "writeAStringToFile(_:fileName:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/Act.swift"
-            timestampString = "475241376.115044"
+            timestampString = "475309349.350725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "generateASentenceDB(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/Act.swift"
-            timestampString = "475241376.115044"
+            timestampString = "475309349.350725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "generateASentenceDB(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -278,11 +278,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/ViewController.swift"
-            timestampString = "475081290.304627"
+            timestampString = "475845560.764412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -294,11 +294,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/ViewController.swift"
-            timestampString = "475081290.304627"
+            timestampString = "475845560.764412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -310,12 +310,42 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sodateru/ViewController.swift"
-            timestampString = "475081290.304627"
+            timestampString = "475307082.230745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "wordRegister(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sodateru/Character.swift"
+            timestampString = "475838685.101974"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sodateru/Character.swift"
+            timestampString = "475838698.303314"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "primaryKey()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

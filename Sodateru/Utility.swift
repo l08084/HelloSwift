@@ -30,8 +30,6 @@ public class Utility {
         /*** 既存データを文字列として取得する ***/
         let existedContents: String = readFileAsString(fileName)
         
-        print("existed:\(existedContents)")
-        print("str:\(str)")
         // 既存データ+入力された単語データ を生成する
         if existedContents.isEmpty {
             contents = str as NSString
@@ -105,7 +103,7 @@ public class Utility {
                 result.append(item)
             }
         } catch {
-            print("失敗")
+            
         }
         
         return result

@@ -17,7 +17,6 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
     var deltaPoint = CGPointZero
     
     struct Constants {
-        
         // Player画像
         static let PlayerImages = ["shrimp01", "shrimp02", "shrimp03", "shrimp04"]
     }
@@ -40,8 +39,6 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
         
         //GameSceneの大きさでphysicsBodyを設定
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
-        
-        
     }
     
     func setupBackgroundSea() {
@@ -66,7 +63,6 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
             sprite.runAction(repeatForeverAnim)
             baseNode.addChild(sprite)
         }
-                
     }
     
     func setupPlayer() {

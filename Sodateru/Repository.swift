@@ -12,9 +12,9 @@ import RealmSwift
 public class Repository {
     
     /**
-     * DB初期設定
+     * DB初期設定(MasterWordテーブル)
      **/
-    func dataSetting() {
+    func masterWordSttng() {
         
         // DBに初期設定する単語
         var words: [String] = ["りんご", "たべる", "ボール", "なげる", "まるい", "おいしい", "かばん",
@@ -56,6 +56,25 @@ public class Repository {
     }
     
     /**
+     * DB初期設定(Characterテーブル)
+     **/
+    func characterSttng() {
+        
+        let character = Character()
+        character.id = "1"
+        
+        // デフォルトRealmを取得する
+        let realm = try! Realm()
+        
+        // トランザクションを開始して、オブジェクトをRealmに追加する
+        try! realm.write {
+            // DBにデータがなければ、登録(あれば更新)
+            realm.add(character, update: true)
+        }
+    }
+    
+    
+    /**
      * リストボックスで選択した単語をDBに保存
      **/
     func saveWord(word: String, part: String) {
@@ -66,6 +85,7 @@ public class Repository {
         // Wordテーブルのmodelオブジェクトを宣言
         let wo = Word()
         
+        // 単語と品詞を設定
         wo.word = word
         wo.part = part
         
@@ -87,6 +107,7 @@ public class Repository {
         // Wordテーブルのmodelオブジェクトを宣言
         let sntnc = Sentence()
         
+        // 文と判定フラグを設定
         sntnc.sentence = sentence
         sntnc.flg = flg
         

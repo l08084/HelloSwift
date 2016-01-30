@@ -13,6 +13,7 @@ class Sentence: Object {
     
     dynamic var sentence = ""
     dynamic var flg = ""
+    dynamic var owner: Character?
     
     override static func primaryKey() -> String? {
         return "sentence"
