@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     
     var act :Action = Action()
     
+    var nowChara :Character?
+    
     let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     /**
@@ -117,6 +119,10 @@ class ViewController: UIViewController {
         repo.masterWordSttng()
         // Characterの初期設定
         repo.characterSttng()
+        
+        // id=1のキャラを作成
+        nowChara = repo.findCharacter("1")
+        print("Character:\(nowChara)")
     }
     
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く

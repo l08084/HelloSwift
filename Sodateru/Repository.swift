@@ -11,6 +11,19 @@ import RealmSwift
 
 public class Repository {
     
+    let realm :Realm
+    
+    // 初期化処理
+    init() {
+        
+        // デフォルトRealmを取得する
+        realm = try! Realm()
+        
+        // Realmファイルが現在配置されている場所を表示
+        print("realm:\(realm.path)")
+        
+    }
+    
     /**
      * DB初期設定(MasterWordテーブル)
      **/
@@ -33,12 +46,6 @@ public class Repository {
         // MasterWordテーブルのmodelオブジェクトを宣言
         var masterWords: [MasterWord]  = []
         
-        // デフォルトRealmを取得する
-        let realm = try! Realm()
-        
-        // Realmファイルが現在配置されている場所を表示
-        print("realm:\(realm.path)")
-        
         // トランザクションを開始して、オブジェクトをRealmに追加する
         try! realm.write {
             
@@ -50,7 +57,7 @@ public class Repository {
                 masterWords[num].part = parts[num]
                 
                 // DBにデータがなければ、登録(あれば更新)
-                realm.add(masterWords[num], update: true)
+                self.realm.add(masterWords[num], update: true)
             }
         }
     }
@@ -63,14 +70,24 @@ public class Repository {
         let character = Character()
         character.id = "1"
         
-        // デフォルトRealmを取得する
-        let realm = try! Realm()
-        
         // トランザクションを開始して、オブジェクトをRealmに追加する
         try! realm.write {
             // DBにデータがなければ、登録(あれば更新)
-            realm.add(character, update: true)
+            self.realm.add(character, update: true)
         }
+    }
+    
+    /**
+     * DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
+     * author l08084
+     **/
+    func findCharacter(id: String) -> Character {
+        
+        // 引数で指定したidのキャラクターをDBから取得
+        let results = realm.objects(Character).filter("id = %@", id)
+        
+        // 条件に該当するキャラは一つなので、一つだけ戻す
+        return results[0]
     }
     
     
@@ -78,9 +95,6 @@ public class Repository {
      * リストボックスで選択した単語をDBに保存
      **/
     func saveWord(word: String, part: String) {
-        
-        // デフォルトRealmを取得する
-        let realm = try! Realm()
         
         // Wordテーブルのmodelオブジェクトを宣言
         let wo = Word()
@@ -92,7 +106,7 @@ public class Repository {
         try! realm.write {
             
             // DBにデータがなければ、登録(あれば更新)
-            realm.add(wo, update: true)
+            self.realm.add(wo, update: true)
         }
     }
     
@@ -100,9 +114,6 @@ public class Repository {
      * リストボックスで選択した単語をDBに保存
      **/
     func saveSentence(sentence: String, flg: String) {
-        
-        // デフォルトRealmを取得する
-        let realm = try! Realm()
         
         // Wordテーブルのmodelオブジェクトを宣言
         let sntnc = Sentence()
@@ -114,7 +125,7 @@ public class Repository {
         try! realm.write {
             
             // DBにデータがなければ、登録(あれば更新)
-            realm.add(sntnc, update: true)
+            self.realm.add(sntnc, update: true)
         }
     }
     
@@ -126,8 +137,6 @@ public class Repository {
     func findMasterWord(part: String) -> [String] {
         
         var resultList: [String] = []
-        
-        let realm = try! Realm()
         
         // 引数で指定した品詞の単語全てをDBから取得
         let masterWords = realm.objects(MasterWord).filter("part = %@", part)
@@ -148,8 +157,6 @@ public class Repository {
         
         var resultList: [String] = []
         
-        let realm = try! Realm()
-        
         // 引数で指定した品詞の単語全てをDBから取得
         let words = realm.objects(Word).filter("part = %@", part)
         
@@ -168,8 +175,6 @@ public class Repository {
     func findSentenceByFlg(flg: String) -> [String] {
         
         var resultList: [String] = []
-        
-        let realm = try! Realm()
         
         // 引数で指定した品詞の単語全てをDBから取得
         let sentences = realm.objects(Sentence).filter("flg = %@", flg)
