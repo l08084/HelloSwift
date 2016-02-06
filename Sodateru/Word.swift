@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+/// Wordテーブルのモデルクラス
 class Word: Object {
     
     dynamic var word = ""

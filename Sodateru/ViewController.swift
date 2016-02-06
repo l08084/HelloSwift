@@ -33,9 +33,9 @@ class ViewController: UIViewController {
     
     let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    /**
-     * 話すボタン押下
-     **/
+    
+    /// 話すボタンを押下すると文を作成、表示
+    /// - parameter sender:
     @IBAction func talking(sender: UIButton) {
         
         // 文章を生成する
@@ -50,9 +50,9 @@ class ViewController: UIViewController {
         repo.saveSentence(speak, flg: "-")
     }
     
-    /**
-     * 登録ボタン押下
-     **/
+    
+    /// 登録ボタンを押下すると単語を登録
+    /// - parameter sender:
     @IBAction func wordRegister(sender: AnyObject) {
         
         // 動詞に単語が設定されていた場合
@@ -91,6 +91,7 @@ class ViewController: UIViewController {
             appDelegate.pronoun = ""
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -165,7 +166,9 @@ class ViewController: UIViewController {
         }
     }
     
-    // ⚪︎ボタン押下
+    
+    /// まるボタンを押下すると文を判定
+    /// - parameter sender:
     @IBAction func sentenceOK(sender: AnyObject) {
         
         // 文章を丸(1)に設定
@@ -184,7 +187,9 @@ class ViewController: UIViewController {
         repo.saveSentence(speak, flg: "-")
     }
     
-    // ×ボタン押下
+    
+    /// ばつボタンを押下すると文を判定
+    /// - parameter sender:
     @IBAction func sentenceNG(sender: AnyObject) {
 
         // 文章をばつ(2)に設定

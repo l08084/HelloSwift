@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 名詞セレクトボックスを表示するViewController
 class NounViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Tableで使用する配列を設定する

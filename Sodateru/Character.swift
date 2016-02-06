@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+/// Characterテーブルのモデルクラス
 class Character: Object {
     
     dynamic var id = ""

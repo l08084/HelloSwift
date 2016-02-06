@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var verb: String = ""
     var noun: String = ""
     var pronoun: String = ""
+    
+    // 時計計測用の変数
+    var cnt : Float = 0
+    
+    
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

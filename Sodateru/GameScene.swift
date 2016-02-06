@@ -41,6 +41,8 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
     }
     
+    
+    /// 背景画像として海を表示し、海を横にスライドさせる
     func setupBackgroundSea() {
         
         // 背景画像(流れる海)を読み込む
@@ -65,6 +67,8 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
         }
     }
     
+    
+    /// プレイヤー(エビ)を配置して、動かす
     func setupPlayer() {
         
         // Playerのパラパラアニメーション作成に必要なSKTextureクラスの配列を定義

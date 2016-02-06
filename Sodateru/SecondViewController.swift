@@ -10,6 +10,7 @@
 import UIKit
 import RealmSwift
 
+/// 動詞セレクトボックスを表示するViewController
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Tableで使用する配列を設定する
@@ -43,8 +44,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.view.addSubview(myTableView)
         
     }
-    
-    
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

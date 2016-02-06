@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+/// DBアクセスクラス
 public class Repository {
     
     let realm :Realm
@@ -24,9 +25,8 @@ public class Repository {
         
     }
     
-    /**
-     * DB初期設定(MasterWordテーブル)
-     **/
+    
+    /// DB初期設定(MasterWordテーブル)
     func masterWordSttng() {
         
         // DBに初期設定する単語
@@ -62,9 +62,8 @@ public class Repository {
         }
     }
     
-    /**
-     * DB初期設定(Characterテーブル)
-     **/
+
+    /// DB初期設定(Characterテーブル)
     func characterSttng() {
         
         let character = Character()
@@ -77,10 +76,8 @@ public class Repository {
         }
     }
     
-    /**
-     * DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
-     * author l08084
-     **/
+    
+    /// DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
     func findCharacter(id: String) -> Character {
         
         // 引数で指定したidのキャラクターをDBから取得
@@ -91,9 +88,7 @@ public class Repository {
     }
     
     
-    /**
-     * リストボックスで選択した単語をDBに保存
-     **/
+    /// リストボックスで選択した単語をDBに保存
     func saveWord(word: String, part: String) {
         
         // Wordテーブルのmodelオブジェクトを宣言
@@ -110,9 +105,8 @@ public class Repository {
         }
     }
     
-    /**
-     * リストボックスで選択した単語をDBに保存
-     **/
+    
+    /// リストボックスで選択した単語をDBに保存
     func saveSentence(sentence: String, flg: String) {
         
         // Wordテーブルのmodelオブジェクトを宣言
@@ -130,10 +124,7 @@ public class Repository {
     }
     
     
-    /**
-     * DB(Realm)内容読み込み、対象テーブルはMasterWord（指定したpartのWord文字列配列を返す）
-     * author l08084
-     **/
+    /// DB(Realm)内容読み込み、対象テーブルはMasterWord（指定したpartのWord文字列配列を返す）
     func findMasterWord(part: String) -> [String] {
         
         var resultList: [String] = []
@@ -149,10 +140,8 @@ public class Repository {
         return resultList
     }
     
-    /**
-     * DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
-     * author l08084
-     **/
+    
+    /// DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
     func findWord(part: String) -> [String] {
         
         var resultList: [String] = []
@@ -168,10 +157,8 @@ public class Repository {
         return resultList
     }
     
-    /**
-     * DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
-     * author l08084
-     **/
+    
+    /// DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
     func findSentenceByFlg(flg: String) -> [String] {
         
         var resultList: [String] = []

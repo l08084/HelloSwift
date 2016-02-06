@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 
+/// 形容詞セレクトボックスを表示するViewController
 class AdjectiveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Tableで使用する配列を設定する

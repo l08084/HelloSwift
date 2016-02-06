@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+/// Sentenceテーブルのモデルクラス
 class Sentence: Object {
     
     dynamic var sentence = ""
