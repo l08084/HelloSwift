@@ -5,7 +5,8 @@
 //  Created by Snufkin on 2015/11/19.
 //  Copyright © 2015年 Snufkin. All rights reserved.
 //
-
+/// DBを切り替えたため、現在は使用していない。
+/*
 import Foundation
 
 public class Manager {
@@ -84,3 +85,4 @@ public class Manager {
         return resultList
     }
 }
+*/

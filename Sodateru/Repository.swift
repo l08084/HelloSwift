@@ -22,7 +22,6 @@ public class Repository {
         
         // Realmファイルが現在配置されている場所を表示
         print("realm:\(realm.path)")
-        
     }
     
     
@@ -158,7 +157,8 @@ public class Repository {
     }
     
     
-    /// DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
+    /// 文章判定フラグをキーに、文章リストを取得
+    /// - parameter flg: 文章判定フラグ
     func findSentenceByFlg(flg: String) -> [String] {
         
         var resultList: [String] = []

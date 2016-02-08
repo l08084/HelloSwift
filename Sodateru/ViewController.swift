@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     var paramN :String = ""
     var paramP :String = ""
     
-    var act :Action = Action()
+    var service = Service()
     
     var nowChara :Character?
     
@@ -39,13 +39,10 @@ class ViewController: UIViewController {
     @IBAction func talking(sender: UIButton) {
         
         // 文章を生成する
-        let speak = act.generateASentenceDB("NV")
+        let speak = service.generateASentenceDB("NV")
         speakLabel.text = speak
         
-        // "sentences.txt"に生成した文を保存
-        act.registerASentence(speak + ",-")
-        
-        // Sentenceに生成した文を保存
+        // Sentenceテーブルに生成した文を保存
         let repo = Repository()
         repo.saveSentence(speak, flg: "-")
     }
@@ -176,11 +173,8 @@ class ViewController: UIViewController {
         repo.saveSentence(speakLabel.text!, flg: "1")
         
         // 文章を判定したら、違う文に切り替える
-        let speak = act.generateASentenceDB("NV")
+        let speak = service.generateASentenceDB("NV")
         speakLabel.text = speak
-        
-        // "sentences.txt"に生成した文を保存
-        act.registerASentence(speak + ",-")
         
         // Sentenceに生成した文を保存
         repo = Repository()
@@ -197,11 +191,8 @@ class ViewController: UIViewController {
         repo.saveSentence(speakLabel.text!, flg: "2")
         
         // 文章を判定したら、違う文に切り替える
-        let speak = act.generateASentenceDB("NV")
+        let speak = service.generateASentenceDB("NV")
         speakLabel.text = speak
-        
-        // "sentences.txt"に生成した文を保存
-        act.registerASentence(speak + ",-")
         
         // Sentenceに生成した文を保存
         repo = Repository()
@@ -213,6 +204,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
 

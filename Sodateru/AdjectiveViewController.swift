@@ -16,7 +16,6 @@ class AdjectiveViewController: UIViewController, UITableViewDelegate, UITableVie
     private var myItems: [String] = ["りんご", "空", "世間話", "映画", "カフェ", "コーヒー"]
     private var myTableView: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

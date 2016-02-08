@@ -10,9 +10,6 @@ import UIKit
 
 /// 覚えた単語リストを表示する
 class SandBoxViewController: UIViewController {
-    
     override func viewDidLoad() {
-        
     }
-    
 }

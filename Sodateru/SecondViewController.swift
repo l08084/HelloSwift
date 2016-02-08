@@ -42,7 +42,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Viewに追加する.
         self.view.addSubview(myTableView)
-        
     }
     
     
@@ -70,5 +69,4 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myItems.count
     }
-
 }

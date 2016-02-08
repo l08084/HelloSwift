@@ -41,8 +41,6 @@ class NounViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Viewに追加する.
         self.view.addSubview(myTableView)
-        
-        
     }
     
     
