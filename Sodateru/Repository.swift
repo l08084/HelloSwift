@@ -63,15 +63,16 @@ public class Repository {
     
 
     /// DB初期設定(Characterテーブル)
-    func characterSttng() {
+    /// - parameter flg: 文章判定フラグ
+    func characterSttng(id: String) {
         
         let character = Character()
-        character.id = "1"
+        character.id = id
         
         // トランザクションを開始して、オブジェクトをRealmに追加する
         try! realm.write {
-            // DBにデータがなければ、登録(あれば更新)
-            self.realm.add(character, update: true)
+            // 登録(すでに同一IDのデータが登録されていた場合でも、birthDateは更新しない)
+            self.realm.create(Character.self, value:["id": id], update: true)
         }
     }
     
@@ -152,7 +153,6 @@ public class Repository {
         for w in words {
             resultList.append(w.word)
         }
-        
         return resultList
     }
     
@@ -172,5 +172,16 @@ public class Repository {
         }
         
         return resultList
+    }
+    
+    /// IDをキーにキャラクターのBirthDateを取得
+    /// - parameter id: キャラクターID
+    func findBirthDateById(id: String) -> NSDate {
+        
+        // IDをキーに、キャラクターを取得
+        let result = realm.objects(Character).filter("id = %@", id)
+        
+        // 条件に該当するキャラは一つなので、一つだけ戻す
+        return result[0].birthdate
     }
 }

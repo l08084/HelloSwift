@@ -29,8 +29,6 @@ class ViewController: UIViewController {
     
     var service = Service()
     
-    var nowChara :Character?
-    
     let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     
@@ -115,12 +113,13 @@ class ViewController: UIViewController {
         let repo = Repository()
         // MasterWordの初期設定
         repo.masterWordSttng()
-        // Characterの初期設定
-        repo.characterSttng()
         
-        // id=1のキャラを作成
-        nowChara = repo.findCharacter("1")
-        print("Character:\(nowChara)")
+        let characterId = "1"
+        
+        // Characterの初期設定
+        service.characterSttng(characterId)
+        
+        service.timeSetting("1")
     }
     
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く
@@ -168,7 +167,7 @@ class ViewController: UIViewController {
     /// - parameter sender:
     @IBAction func sentenceOK(sender: AnyObject) {
         
-        // 文章を丸(1)に設定
+        // 文章を丸(flg:1)に設定
         var repo = Repository()
         repo.saveSentence(speakLabel.text!, flg: "1")
         
@@ -186,7 +185,7 @@ class ViewController: UIViewController {
     /// - parameter sender:
     @IBAction func sentenceNG(sender: AnyObject) {
 
-        // 文章をばつ(2)に設定
+        // 文章をばつ(flg:2)に設定
         var repo = Repository()
         repo.saveSentence(speakLabel.text!, flg: "2")
         

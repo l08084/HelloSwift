@@ -13,7 +13,7 @@ import SpriteKit
 class AdjectiveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Tableで使用する配列を設定する
-    private var myItems: [String] = ["りんご", "空", "世間話", "映画", "カフェ", "コーヒー"]
+    private var myItems: [String] = []
     private var myTableView: UITableView!
     
     override func viewDidLoad() {

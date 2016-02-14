@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// 共通処理を実装するクラス
 public class Support {
     
     /// 単語選択
