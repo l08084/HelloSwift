@@ -25,7 +25,7 @@ public class Repository {
     }
     
     
-    /// DB初期設定(MasterWordテーブル)
+    /// MasterWordテーブルの初期設定
     func masterWordSttng() {
         
         // DBに初期設定する単語
@@ -78,6 +78,7 @@ public class Repository {
     
     
     /// DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
+    /// - parameter id: キャラクターid
     func findCharacter(id: String) -> Character {
         
         // 引数で指定したidのキャラクターをDBから取得
@@ -89,6 +90,8 @@ public class Repository {
     
     
     /// リストボックスで選択した単語をDBに保存
+    /// - parameter word: 単語
+    /// - parameter part: 単語の品詞
     func saveWord(word: String, part: String) {
         
         // Wordテーブルのmodelオブジェクトを宣言
@@ -107,6 +110,8 @@ public class Repository {
     
     
     /// リストボックスで選択した単語をDBに保存
+    /// - parameter sentence: 文章
+    /// - parameter flg: 文章判定フラグ
     func saveSentence(sentence: String, flg: String) {
         
         // Wordテーブルのmodelオブジェクトを宣言
@@ -125,6 +130,7 @@ public class Repository {
     
     
     /// DB(Realm)内容読み込み、対象テーブルはMasterWord（指定したpartのWord文字列配列を返す）
+    /// - parameter part: 単語の品詞
     func findMasterWord(part: String) -> [String] {
         
         var resultList: [String] = []
@@ -142,6 +148,7 @@ public class Repository {
     
     
     /// DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
+    /// - parameter part: 単語の品詞
     func findWord(part: String) -> [String] {
         
         var resultList: [String] = []

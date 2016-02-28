@@ -65,7 +65,7 @@ public class Service {
         return sentence
     }
     
-    func timeSetting(CharaId: String) -> NSDate {
+    func timeSetting(CharaId: String) -> Int {
         let now = NSDate()
         let birth = repo.findBirthDateById("1")
         
@@ -91,7 +91,9 @@ public class Service {
         print("minute: \(components.minute)")
         print("minute: \(components.second)")
         
-        return now
+        print("\(-components.day)日経過")
+        
+        return -components.day
     }
     
     func characterSttng(CharaId: String) -> Character {

@@ -115,6 +115,12 @@
                                     <segue destination="czj-OZ-FE7" kind="modal" id="jcS-ad-VwE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6a-Wm-MVO">
+                                <rect key="frame" x="221" y="148" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -123,11 +129,12 @@
                         <outlet property="selectNounBox" destination="ajm-FN-Tp2" id="2eC-ad-Wfi"/>
                         <outlet property="selectPronounBox" destination="hEc-J7-fzd" id="xGx-qR-RQA"/>
                         <outlet property="speakLabel" destination="osp-Uf-doX" id="e6X-UP-Djx"/>
+                        <outlet property="timeLabel" destination="B6a-Wm-MVO" id="xi0-tP-iNy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2321" y="-1016"/>
+            <point key="canvasLocation" x="-2747" y="-1192"/>
         </scene>
         <!--Adjective View Controller-->
         <scene sceneID="n8I-C6-LZk">

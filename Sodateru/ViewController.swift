@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     
     // 生成した文章を表示するラベル
     @IBOutlet weak var speakLabel: UILabel!
+    // 経過時間を表示するラベル
+    @IBOutlet weak var timeLabel: UILabel!
     
     //セレクトボックス画面から値を受け取る
     var paramV :String = ""
@@ -119,7 +121,7 @@ class ViewController: UIViewController {
         // Characterの初期設定
         service.characterSttng(characterId)
         
-        service.timeSetting("1")
+        timeLabel.text = "\(service.timeSetting("1"))日経過"
     }
     
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く
