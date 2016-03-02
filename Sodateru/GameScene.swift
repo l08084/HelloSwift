@@ -19,6 +19,7 @@ class GameScene : SKScene,SKPhysicsContactDelegate {
     struct Constants {
         // Player画像
         static let PlayerImages = ["shrimp01", "shrimp02", "shrimp03", "shrimp04"]
+        // static let PlayerImages = ["egg01", "egg02"]
     }
     
     override func didMoveToView(view: SKView) {

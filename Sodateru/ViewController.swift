@@ -121,7 +121,9 @@ class ViewController: UIViewController {
         // Characterの初期設定
         service.characterSttng(characterId)
         
-        timeLabel.text = "\(service.timeSetting("1"))日経過"
+        let components = service.timeSetting("1")
+        
+        timeLabel.text = "\(service.hatch(-components.day))日目"
     }
     
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く

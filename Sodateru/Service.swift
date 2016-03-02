@@ -18,10 +18,10 @@ public class Service {
     
     var nowChara :Character?
     
-    let characterId = "1"
 
     /// 文章生成(DB版)
     /// - parameter form: 文型(SV等のこと)
+    /// - returns: 作成した文章
     func generateASentenceDB(form: String) -> String {
     
         var sentence: String = ""
@@ -65,10 +65,16 @@ public class Service {
         return sentence
     }
     
-    func timeSetting(CharaId: String) -> Int {
+    /// 誕生日と現在日時の差分を返す
+    /// - parameter characterId: キャラクターID
+    /// - returns: 作成した文章
+    func timeSetting(characterId: String) -> NSDateComponents {
+        // 現在の日時を取得
         let now = NSDate()
-        let birth = repo.findBirthDateById("1")
+        // キャラクターの誕生日を取得
+        let birth = repo.findBirthDateById(characterId)
         
+        // 日時のフォーマットを作成
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
         
@@ -80,7 +86,7 @@ public class Service {
         
         let cal = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
         
-        //2つの日時の差分
+        //日時の差分を取得
         let unitFlags: NSCalendarUnit = [.Year, .Month, .Day, .Hour, .Minute, .Second]
         let components = cal.components(unitFlags, fromDate: now, toDate: birth, options: NSCalendarOptions())
 
@@ -93,17 +99,32 @@ public class Service {
         
         print("\(-components.day)日経過")
         
-        return -components.day
+        //
+        return components
     }
     
-    func characterSttng(CharaId: String) -> Character {
+    /// 学習させるキャラクターを作成
+    /// - parameter characterId: 作成対象のキャラクターID
+    /// - returns: キャラクターモデルを返す
+    func characterSttng(characterId: String) -> Character {
         
         repo.characterSttng(characterId)
         
-        // id=1のキャラを作成
+        // キャラを作成
         nowChara = repo.findCharacter(characterId)
         print("Character:\(nowChara)")
         
         return Character()
+    }
+    
+    /// 2週間以上経過していた場合は、メッセージを返す
+    /// - parameter day: birthdateからの経過日数
+    /// - reurns: 2週間以上経過していた場合、「産まれました」を返す
+    func hatch(day: Int) -> String {
+        // 2週間以上経過していた場合
+        if(day > 13) {
+            return "産まれました"
+        }
+        return String(day)
     }
 }
