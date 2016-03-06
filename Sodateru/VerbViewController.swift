@@ -11,7 +11,7 @@ import UIKit
 import RealmSwift
 
 /// 動詞セレクトボックスを表示するViewController
-class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class VerbViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Tableで使用する配列を設定する
     private var myItems: [String] = []
@@ -40,7 +40,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let repo = Repository()
         myItems = repo.findMasterWord("verb")
         
-        // Viewに追加する.
+        // Viewに追加する
         self.view.addSubview(myTableView)
     }
     

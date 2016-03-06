@@ -21,4 +21,12 @@ public class Support {
         
         return list[idx]
     }
+    
+    /*
+    func shuffle(inout array: [String]) {
+        for var j = array.count -1; j > 0; j-- {
+            var k = Int(arc4random_uniform(UInt32(j+ 1)))
+        }
+    }
+    */
 }

@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="-1251" y="76"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Verb View Controller-->
         <scene sceneID="L9K-tk-bAP">
             <objects>
-                <viewController id="DiS-Dn-DLj" customClass="SecondViewController" customModule="Sodateru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DiS-Dn-DLj" customClass="VerbViewController" customModule="Sodateru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1cP-iI-tg8"/>
                         <viewControllerLayoutGuide type="bottom" id="oug-fw-uzR"/>
