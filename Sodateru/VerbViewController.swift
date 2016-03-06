@@ -36,9 +36,9 @@ class VerbViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Delegateを設定する.
         myTableView.delegate = self
         
-        // DBから動詞の単語を取り出す
-        let repo = Repository()
-        myItems = repo.findMasterWord("verb")
+        // DBから動詞をランダムに5個取り出す
+        let service = Service()
+        myItems = service.findMasterWord("verb")
         
         // Viewに追加する
         self.view.addSubview(myTableView)

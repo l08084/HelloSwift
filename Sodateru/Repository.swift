@@ -131,6 +131,7 @@ public class Repository {
     
     /// DB(Realm)内容読み込み、対象テーブルはMasterWord（指定したpartのWord文字列配列を返す）
     /// - parameter part: 単語の品詞
+    /// - returns: 引数の品詞にマッチした単語全て
     func findMasterWord(part: String) -> [String] {
         
         var resultList: [String] = []
@@ -149,6 +150,7 @@ public class Repository {
     
     /// DB(Realm)内容読み込み、対象テーブルはWord（指定したpartのWord文字列配列を返す）
     /// - parameter part: 単語の品詞
+    /// - returns: 引数の品詞にマッチした単語全て
     func findWord(part: String) -> [String] {
         
         var resultList: [String] = []

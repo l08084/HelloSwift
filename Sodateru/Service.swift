@@ -127,4 +127,20 @@ public class Service {
         }
         return String(day)
     }
+    
+    /// DB(Realm)内容読み込み、対象テーブルはMasterWord（指定したpartのWord文字列配列を返す）
+    /// - parameter part: 単語の品詞
+    /// - returns: 引数の品詞にマッチした単語全て
+    func findMasterWord(part: String) -> [String] {
+        
+        var resultList: [String] = []
+        
+        // DBから指定した品詞の単語を全て取り出す
+        resultList = repo.findMasterWord(part)
+        // 取り出した単語をシャッフル
+        support.shuffle(&resultList)
+        
+        // 単語を5個だけ返す
+        return Array(resultList[0...5])
+    }
 }
