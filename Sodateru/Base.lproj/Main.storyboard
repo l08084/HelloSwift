@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6a-Wm-MVO">
-                                <rect key="frame" x="221" y="148" width="95" height="21"/>
+                                <rect key="frame" x="221" y="148" width="149" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -223,6 +223,6 @@
         <image name="maru" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OU0-Uc-wql"/>
+        <segue reference="A8B-av-cHI"/>
     </inferredMetricsTieBreakers>
 </document>

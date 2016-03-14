@@ -33,14 +33,18 @@ public class Repository {
             "でんしゃ", "くるま", "うみ", "おかし", "いす", "つくえ", "はな", "たまご",
             "ふく", "もつ", "はしる", "のる", "およぐ", "わたす", "すわる", "つかう",
             "おく", "きる", "わる", "きれい", "ひろい", "はやい", "おおきい", "ちいさい",
-            "かわいい", "かるい", "おもい", "たかい", "ひくい"]
+            "かわいい", "かるい", "おもい", "たかい", "ひくい", "まつ", "よむ", "はたらく",
+            "きく", "じてんしゃ", "みかん", "ようなし", "いぬ", "やさしい", "むずかしい",
+            "いそがしい", "うるさい", "おいしい"]
         
         // DBに初期設定する品詞
         var parts: [String] = ["noun", "verb", "noun", "verb", "pronoun", "pronoun", "noun",
             "noun", "noun", "noun", "noun", "noun", "noun", "noun", "noun",
             "noun", "verb", "verb", "verb", "verb", "verb", "verb", "verb",
             "verb", "verb", "verb", "pronoun", "pronoun", "pronoun", "pronoun",
-            "pronoun", "pronoun", "pronoun", "pronoun", "pronoun", "pronoun"]
+            "pronoun", "pronoun", "pronoun", "pronoun", "pronoun", "pronoun",
+            "verb", "verb", "verb", "verb", "noun", "noun", "noun", "noun",
+            "pronoun", "pronoun", "pronoun", "pronoun", "pronoun"]
         
         // MasterWordテーブルのmodelオブジェクトを宣言
         var masterWords: [MasterWord]  = []
