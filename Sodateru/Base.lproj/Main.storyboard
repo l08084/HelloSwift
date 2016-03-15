@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2747" y="-1192"/>
+            <point key="canvasLocation" x="-2900" y="-1099"/>
         </scene>
         <!--Adjective View Controller-->
         <scene sceneID="n8I-C6-LZk">
@@ -223,6 +223,6 @@
         <image name="maru" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="A8B-av-cHI"/>
+        <segue reference="Xnu-ho-Red"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -123,7 +123,7 @@ class ViewController: UIViewController {
         
         let components = service.timeSetting("1")
         
-        timeLabel.text = "\(service.hatch(-components.day))日目"
+        timeLabel.text = "\(service.hatch(-components.day))"
     }
     
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く

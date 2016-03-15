@@ -124,8 +124,9 @@ public class Service {
         // 2週間以上経過していた場合
         if(day > 13) {
             return "産まれました"
+        } else {
+            return String(day) + "日目"
         }
-        return String(day)
     }
     
     /// DB(Realm)内容読み込み、対象テーブルはMasterWord（指定したpartのWord文字列配列を返す）
