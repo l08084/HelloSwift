@@ -47,6 +47,17 @@ class ViewController: UIViewController {
         repo.saveSentence(speak, flg: "-")
     }
     
+    func update() {
+        
+        // 文章を生成する
+        let speak = service.generateASentenceDB("NV")
+        speakLabel.text = speak
+        
+        // Sentenceテーブルに生成した文を保存
+        let repo = Repository()
+        repo.saveSentence(speak, flg: "-")
+    }
+    
     
     /// 登録ボタンを押下すると単語を登録
     /// - parameter sender:
@@ -121,9 +132,14 @@ class ViewController: UIViewController {
         // Characterの初期設定
         service.characterSttng(characterId)
         
+        // id=1のキャラクターが誕生してからの経過時間を取得
         let components = service.timeSetting("1")
         
+        // ラベルに経過時間を表示
         timeLabel.text = "\(service.hatch(-components.day))"
+        
+        // 10秒ごとにキャラクターのセリフを切り替える
+        NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く
