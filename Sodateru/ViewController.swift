@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         repo.saveSentence(speak, flg: "-")
     }
     
+    /// 一定時間が経過すると、セリフを更新する
     func update() {
         
         // 文章を生成する
@@ -138,8 +139,8 @@ class ViewController: UIViewController {
         // ラベルに経過時間を表示
         timeLabel.text = "\(service.hatch(-components.day))"
         
-        // 10秒ごとにキャラクターのセリフを切り替える
-        NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        // 5秒ごとにキャラクターのセリフを切り替える
+        NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く

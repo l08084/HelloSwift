@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92241EC51C1C10DF00091D85 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92241EC41C1C10DF00091D85 /* words.txt */; };
-		923C7E5C1C15E09E0063704B /* masterWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 923C7E5B1C15E09E0063704B /* masterWords.txt */; };
 		9A9FA7AE9D9E53AA54AFA14B /* Pods_Sodateru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54B008B847375A7A760CDF7 /* Pods_Sodateru.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B04D210D1C22DC2A005588AE /* SandBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04D210C1C22DC2A005588AE /* SandBoxViewController.swift */; };
 		B060B4DB1BF6E9E7006707C9 /* VerbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B060B4DA1BF6E9E7006707C9 /* VerbViewController.swift */; };
@@ -26,10 +24,6 @@
 		B0B8B6421BF5B9B30029799C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B8B6401BF5B9B30029799C /* LaunchScreen.storyboard */; };
 		B0B8B64D1BF5B9B30029799C /* SodateruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B8B64C1BF5B9B30029799C /* SodateruTests.swift */; };
 		B0B8B6581BF5BD080029799C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B8B6571BF5BD080029799C /* GameScene.swift */; };
-		B0DC6DE01C030D64000AA3B8 /* Act.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC6DDB1C030D64000AA3B8 /* Act.swift */; };
-		B0DC6DE11C030D64000AA3B8 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC6DDC1C030D64000AA3B8 /* Manager.swift */; };
-		B0DC6DE21C030D64000AA3B8 /* sentences.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0DC6DDD1C030D64000AA3B8 /* sentences.txt */; };
-		B0DC6DE31C030D64000AA3B8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC6DDE1C030D64000AA3B8 /* Utility.swift */; };
 		B0EB84F31C02DE7300C215C3 /* NounViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EB84F21C02DE7300C215C3 /* NounViewController.swift */; };
 		B0EB84F51C02E09000C215C3 /* AdjectiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EB84F41C02E09000C215C3 /* AdjectiveViewController.swift */; };
 /* End PBXBuildFile section */
@@ -47,8 +41,6 @@
 /* Begin PBXFileReference section */
 		3B4174AEFB008EA22A28FDE1 /* Pods-Sodateru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sodateru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sodateru/Pods-Sodateru.debug.xcconfig"; sourceTree = "<group>"; };
 		74EB7B43F0C0FC0F95C4F12E /* Pods-Sodateru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sodateru.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sodateru/Pods-Sodateru.release.xcconfig"; sourceTree = "<group>"; };
-		92241EC41C1C10DF00091D85 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
-		923C7E5B1C15E09E0063704B /* masterWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = masterWords.txt; sourceTree = "<group>"; };
 		B04D210C1C22DC2A005588AE /* SandBoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandBoxViewController.swift; sourceTree = "<group>"; };
 		B060B4DA1BF6E9E7006707C9 /* VerbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbViewController.swift; sourceTree = "<group>"; };
 		B065E2A41C5CA02100D2BF49 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -69,10 +61,6 @@
 		B0B8B64C1BF5B9B30029799C /* SodateruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SodateruTests.swift; sourceTree = "<group>"; };
 		B0B8B64E1BF5B9B30029799C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0B8B6571BF5BD080029799C /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		B0DC6DDB1C030D64000AA3B8 /* Act.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Act.swift; sourceTree = "<group>"; };
-		B0DC6DDC1C030D64000AA3B8 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
-		B0DC6DDD1C030D64000AA3B8 /* sentences.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sentences.txt; sourceTree = "<group>"; };
-		B0DC6DDE1C030D64000AA3B8 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B0EB84F21C02DE7300C215C3 /* NounViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NounViewController.swift; sourceTree = "<group>"; };
 		B0EB84F41C02E09000C215C3 /* AdjectiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjectiveViewController.swift; sourceTree = "<group>"; };
 		F54B008B847375A7A760CDF7 /* Pods_Sodateru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sodateru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,12 +132,6 @@
 				B0B8B6401BF5B9B30029799C /* LaunchScreen.storyboard */,
 				B0B8B6431BF5B9B30029799C /* Info.plist */,
 				B0B8B6571BF5BD080029799C /* GameScene.swift */,
-				B0DC6DDB1C030D64000AA3B8 /* Act.swift */,
-				B0DC6DDC1C030D64000AA3B8 /* Manager.swift */,
-				B0DC6DDD1C030D64000AA3B8 /* sentences.txt */,
-				B0DC6DDE1C030D64000AA3B8 /* Utility.swift */,
-				92241EC41C1C10DF00091D85 /* words.txt */,
-				923C7E5B1C15E09E0063704B /* masterWords.txt */,
 				B060B4DA1BF6E9E7006707C9 /* VerbViewController.swift */,
 				B0EB84F21C02DE7300C215C3 /* NounViewController.swift */,
 				B0EB84F41C02E09000C215C3 /* AdjectiveViewController.swift */,
@@ -260,10 +242,7 @@
 			files = (
 				B0B8B6421BF5B9B30029799C /* LaunchScreen.storyboard in Resources */,
 				B0B8B63F1BF5B9B30029799C /* Assets.xcassets in Resources */,
-				923C7E5C1C15E09E0063704B /* masterWords.txt in Resources */,
 				B0B8B63D1BF5B9B30029799C /* Main.storyboard in Resources */,
-				92241EC51C1C10DF00091D85 /* words.txt in Resources */,
-				B0DC6DE21C030D64000AA3B8 /* sentences.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,18 +308,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0DC6DE31C030D64000AA3B8 /* Utility.swift in Sources */,
 				B0EB84F31C02DE7300C215C3 /* NounViewController.swift in Sources */,
 				B0EB84F51C02E09000C215C3 /* AdjectiveViewController.swift in Sources */,
 				B060B4DB1BF6E9E7006707C9 /* VerbViewController.swift in Sources */,
 				B0B8B6581BF5BD080029799C /* GameScene.swift in Sources */,
 				B09452991C4A53470052BD56 /* Word.swift in Sources */,
-				B0DC6DE01C030D64000AA3B8 /* Act.swift in Sources */,
 				B094529F1C5121470052BD56 /* Repository.swift in Sources */,
 				B04D210D1C22DC2A005588AE /* SandBoxViewController.swift in Sources */,
 				B065E2A71C67293800D2BF49 /* Service.swift in Sources */,
 				B0B8B63A1BF5B9B30029799C /* ViewController.swift in Sources */,
-				B0DC6DE11C030D64000AA3B8 /* Manager.swift in Sources */,
 				B0B8B6381BF5B9B30029799C /* AppDelegate.swift in Sources */,
 				B065E2A51C5CA02200D2BF49 /* Character.swift in Sources */,
 				B094529D1C4A59E50052BD56 /* Sentence.swift in Sources */,
