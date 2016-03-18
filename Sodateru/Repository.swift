@@ -162,6 +162,8 @@ public class Repository {
         // 引数で指定した品詞の単語全てをDBから取得
         let words = realm.objects(Word).filter("part = %@", part)
         
+        print("words:\(words)")
+        
         // Word部分のみを取得
         for w in words {
             resultList.append(w.word)

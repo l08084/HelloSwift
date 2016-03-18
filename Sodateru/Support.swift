@@ -17,8 +17,16 @@ public class Support {
         
         /*** 与えられた配列のインデックスをランダムに決めて、その要素を返す ***/
         let listSize: Int = list.count
-        let idx = Int(arc4random() % UInt32(listSize))
+        var idx = 0
         
+        
+        if listSize == 0 {
+            // 登録された単語が０件の場合、丸を返す
+            return "⚪︎"
+        } else {
+            idx = Int(arc4random() % UInt32(listSize))
+        }
+    
         return list[idx]
     }
     
