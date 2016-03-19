@@ -93,7 +93,7 @@ class ViewController: UIViewController {
             
             // Wordテーブルに形容詞を記録
             let repo = Repository()
-            repo.saveWord(selectPronounBox.titleLabel!.text!, part: "pronoun")
+            repo.saveWord(selectPronounBox.titleLabel!.text!, part: "adjective")
             
             //ボタンのラベルをデフォルトに戻す
             selectPronounBox.setTitle("形容詞", forState: .Normal)

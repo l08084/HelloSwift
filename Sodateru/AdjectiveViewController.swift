@@ -37,7 +37,7 @@ class AdjectiveViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // DBから形容詞をランダムに5個取り出す
         let service = Service()
-        myItems = service.findMasterWord("pronoun")
+        myItems = service.findMasterWord("adjective")
         
         // Viewに追加する.
         self.view.addSubview(myTableView)
