@@ -34,7 +34,7 @@ public class Support {
     /// - parameter array: 並び替え対象の配列
     func shuffle(inout array: [String]) {
         for(var j = array.count - 1; j > 0; j--) {
-            var k = Int(arc4random_uniform(UInt32(j + 1)))
+            let k = Int(arc4random_uniform(UInt32(j + 1)))
             if k != j {
             swap(&array[k], &array[j])
             }
