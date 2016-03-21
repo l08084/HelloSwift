@@ -78,7 +78,9 @@ public class Service {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
         
+        // 現在日時
         let nowDate = dateFormatter.stringFromDate(now)
+        // 誕生日時
         let birthDate = dateFormatter.stringFromDate(birth)
         
         print("now: \(nowDate)")
