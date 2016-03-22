@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         repo.saveSentence(speak, flg: "-")
     }
     
+    // TODO:talking()と同じ機能のfunctionなので、一つにまとめる必要がある
     /// 一定時間が経過すると、セリフを更新する
     func update() {
         
@@ -143,16 +144,19 @@ class ViewController: UIViewController {
         NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     
+    // TODO: 使用していないfuncなので、削除が必要
     // 動詞ボタンがタップされたらプルダウン用の別画面を開く
     @IBAction func clickButtonSelect(sender: UIButton) {
         
     }
     
+    // TODO: 使用していないfuncなので、削除が必要
     // 名詞ボタンがタップされたらプルダウン用の別画面を開く
     @IBAction func nounClickButton(sender: UIButton) {
         
     }
     
+    // TODO: 使用していないfuncなので、削除が必要
     // 代名詞ボタンがタップされたらプルダウン用の別画面を開く
     @IBAction func adjectiveClickButton(sender: UIButton) {
         
@@ -165,6 +169,7 @@ class ViewController: UIViewController {
         //プルダウン用の画面から値を受け取る
         paramV = appDelegate.verb
         paramN = appDelegate.noun
+        // TODO: .adjectiveに変更する
         paramP = appDelegate.pronoun
     
         // 動詞が設定された場合

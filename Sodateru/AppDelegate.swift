@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 画面遷移先で渡す値を入れる
     var verb: String = ""
     var noun: String = ""
+    // TODO: adjectiveに変更が必要
     var pronoun: String = ""
     
     // 時計計測用の変数

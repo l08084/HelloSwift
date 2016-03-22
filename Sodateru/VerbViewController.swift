@@ -10,6 +10,7 @@
 import UIKit
 import RealmSwift
 
+// TODO:Noun,AdjectiveViewControllerと統合できないか検討する。機能が重複している
 /// 動詞セレクトボックスを表示するViewController
 class VerbViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
